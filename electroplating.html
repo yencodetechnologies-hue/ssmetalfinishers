@@ -66,6 +66,16 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
 
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
         .service-card {
             transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
         }
@@ -138,12 +148,41 @@
             border-bottom: 1px solid rgba(23, 47, 20, 0.08);
         }
 
-        .spec-row:last-child {
-            border-bottom: none;
+        .spec-row:last-child { border-bottom: none; }
+
+        .page-hero {
+            background: linear-gradient(105deg, rgba(12, 20, 10, 0.93) 0%, rgba(12, 20, 10, 0.8) 60%, rgba(12, 20, 10, 0.65) 100%);
         }
 
-        .process-connector {
-            background: linear-gradient(90deg, transparent, rgba(75,101,68,0.35), transparent);
+        .form-field {
+            background: #efeee9;
+            border: 1px solid rgba(23,47,20,0.12);
+            border-radius: 5px;
+            padding: 14px 16px;
+            transition: all 0.25s ease;
+            width: 100%;
+            color: #1a1c19;
+        }
+
+        .form-field:focus {
+            outline: none;
+            border-color: #4b6544;
+            box-shadow: 0 0 0 3px rgba(75,101,68,0.15);
+            background: #ffffff;
+        }
+
+        .step-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(143, 214, 122, 0.14);
+            border: 1px solid rgba(143, 214, 122, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #4b6544;
+            flex-shrink: 0;
         }
     </style>
 <script id="tailwind-config">
@@ -283,10 +322,11 @@
 </a>
 <nav class="hidden md:flex gap-10 items-center">
 <a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="index.html">Home</a>
-<a class="text-[#4b6544] font-bold font-body-md border-b-2 border-[#4b6544] pb-1 transition-colors duration-300" href="index.html#services">Services</a>
-<a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="index.html#capabilities">Capabilities</a>
-<a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="index.html#contact">Contact</a>
-<a class="hero-btn-primary-like bg-[#172f14] text-white px-7 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-[#2d4628] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 inline-block" href="index.html#contact">Get a Quote</a>
+<a class="text-[#4b6544] font-bold font-body-md border-b-2 border-[#4b6544] pb-1 transition-colors duration-300" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="contact.html">Contact</a>
+<a class="bg-[#172f14] text-white px-7 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-[#2d4628] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 inline-block" href="enquiry.html">Enquire Now</a>
 </nav>
 <button class="md:hidden text-on-surface">
 <span class="material-symbols-outlined text-3xl">menu</span>
@@ -300,7 +340,7 @@
 <div class="flex items-center gap-2 text-xs text-white/50 font-label-caps uppercase tracking-widest mb-8">
 <a class="hover:text-tertiary transition-colors" href="index.html">Home</a>
 <span>/</span>
-<a class="hover:text-tertiary transition-colors" href="index.html#services">Services</a>
+<a class="hover:text-tertiary transition-colors" href="services.html">Services</a>
 <span>/</span>
 <span class="text-tertiary">Electroplating</span>
 </div>
@@ -314,10 +354,10 @@
 </div>
 </div>
 <div class="flex flex-wrap gap-4 mt-10">
-<a class="orange-glow-btn inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-widest text-xs" href="index.html#contact">
+<a class="orange-glow-btn inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-widest text-xs" href="enquiry.html">
 <span class="material-symbols-outlined text-[18px]">request_quote</span> Get a Quote
 </a>
-<a class="metallic-btn inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-widest text-xs" href="index.html#services">
+<a class="metallic-btn inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-widest text-xs" href="services.html">
 Back to All Services
 </a>
 </div>
@@ -491,7 +531,7 @@ Back to All Services
 <span class="material-symbols-outlined text-tertiary text-5xl">electric_bolt</span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface max-w-2xl">Need Electroplating for Your Components?</h2>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Send us your drawings, tolerances, and volumes — our engineers will respond with a tailored process plan and quote within 24–48 business hours.</p>
-<a class="orange-glow-btn inline-flex items-center gap-2 px-10 py-4 font-bold uppercase tracking-widest text-xs" href="index.html#contact">
+<a class="orange-glow-btn inline-flex items-center gap-2 px-10 py-4 font-bold uppercase tracking-widest text-xs" href="enquiry.html">
 Request a Quote <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </a>
 </div>
@@ -555,10 +595,10 @@ Request a Quote <span class="material-symbols-outlined text-[18px]">arrow_forwar
 <div class="md:col-span-2">
 <h5 class="text-tertiary font-bold mb-6 uppercase tracking-widest text-xs">Navigation</h5>
 <ul class="space-y-4 text-white/75 font-body-md">
-<li><a class="hover:text-white transition-colors" href="index.html#capabilities">Capabilities</a></li>
-<li><a class="hover:text-white transition-colors" href="index.html#services">Projects</a></li>
-<li><a class="hover:text-white transition-colors" href="index.html#contact">Compliance</a></li>
-<li><a class="hover:text-white transition-colors" href="index.html">Sustainability</a></li>
+<li><a class="hover:text-white transition-colors" href="services.html">Services</a></li>
+<li><a class="hover:text-white transition-colors" href="gallery.html">Gallery</a></li>
+<li><a class="hover:text-white transition-colors" href="about.html">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="enquiry.html">Enquiry</a></li>
 </ul>
 </div>
 <div class="md:col-span-2">
