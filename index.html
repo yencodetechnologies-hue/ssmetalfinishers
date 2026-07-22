@@ -285,6 +285,63 @@
             }
         }
 
+        /* Mobile UI */
+        .mobile-nav-link {
+            display: block;
+            padding: 0.875rem 1rem;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #434840;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .mobile-nav-link-active {
+            background: rgba(143, 214, 122, 0.14);
+            color: #4b6544;
+            font-weight: 700;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 767px) {
+            .hero-overlay {
+                background: linear-gradient(180deg, rgba(12, 20, 10, 0.85) 0%, rgba(12, 20, 10, 0.94) 100%);
+            }
+
+            .hero-stats-bar > .hero-stat-item:nth-child(odd) {
+                border-right: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .hero-stats-bar > .hero-stat-item:nth-child(-n+4) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .hero-stat-icon {
+                width: 34px;
+                height: 34px;
+            }
+
+            .hero-slide-in {
+                animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+            }
+
+            .page-hero {
+                padding-top: 6.5rem !important;
+            }
+
+            .mobile-stat-number {
+                font-size: 2.25rem !important;
+                line-height: 2.5rem !important;
+            }
+
+            .contact-grid {
+                gap: 2.5rem !important;
+            }
+        }
+
         .service-card {
             transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
         }
@@ -452,10 +509,10 @@
   </div>
 </div>
 <!-- Top Navigation Bar -->
-<header class="fixed top-0 md:top-9 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-outline-variant/40 h-24 flex justify-between items-center px-margin-mobile md:px-margin-desktop shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-<a aria-label="Sunshine home" class="flex items-center py-2 pr-4" href="#">
-  <div class="h-16 md:h-20 flex items-center overflow-hidden">
-    <img alt="Sunshine logo" class="h-14 md:h-16 w-auto max-w-[360px] md:max-w-[520px] object-contain" src="./assets/logo.png"/>
+<header class="site-header fixed top-0 md:top-9 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-outline-variant/40 h-[4.25rem] md:h-24 flex justify-between items-center px-margin-mobile md:px-margin-desktop shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+<a aria-label="Sunshine home" class="flex items-center py-1 pr-2 min-w-0 flex-1 md:flex-none" href="index.html">
+  <div class="h-10 md:h-20 flex items-center overflow-hidden">
+    <img alt="Sunshine logo" class="logo-img h-9 md:h-16 w-auto max-w-[200px] md:max-w-[520px] object-contain object-left" src="./assets/logo.png"/>
   </div>
 </a>
 <nav class="hidden md:flex gap-10 items-center">
@@ -466,12 +523,36 @@
 <a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="contact.html">Contact</a>
 <a class="hero-btn-primary px-7 py-3 font-bold uppercase tracking-widest text-xs inline-block" href="enquiry.html">Enquire Now</a>
 </nav>
-<button class="md:hidden text-on-surface">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<button aria-label="Open menu" class="md:hidden text-on-surface p-2 -mr-1 shrink-0" id="mobile-menu-btn" type="button">
+<span class="material-symbols-outlined text-[28px]" id="mobile-menu-icon">menu</span>
 </button>
 </header>
+<div aria-hidden="true" class="mobile-nav-overlay fixed inset-0 bg-black/50 z-[60] opacity-0 pointer-events-none transition-opacity duration-300" id="mobile-nav-overlay"></div>
+<nav aria-hidden="true" class="mobile-nav-drawer fixed top-0 right-0 h-full w-[min(300px,88vw)] bg-white z-[70] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col" id="mobile-nav-drawer">
+<div class="flex items-center justify-between px-5 py-4 border-b border-outline-variant/40">
+<span class="font-bold text-[#4b6544] uppercase tracking-[0.15em] text-xs">Menu</span>
+<button aria-label="Close menu" class="p-1.5 text-on-surface rounded-lg hover:bg-surface-container" id="mobile-menu-close" type="button">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<div class="flex flex-col p-4 gap-0.5 flex-1 overflow-y-auto">
+<a class="mobile-nav-link" href="index.html">Home</a>
+<a class="mobile-nav-link" href="services.html">Services</a>
+<a class="mobile-nav-link" href="gallery.html">Gallery</a>
+<a class="mobile-nav-link" href="about.html">About</a>
+<a class="mobile-nav-link" href="contact.html">Contact</a>
+<a class="mobile-nav-link" href="enquiry.html">Enquiry</a>
+</div>
+<div class="p-4 border-t border-outline-variant/40 bg-surface-container-low">
+<a class="hero-btn-primary w-full text-center py-3.5 font-bold uppercase tracking-widest text-xs block rounded-xl" href="enquiry.html">Enquire Now</a>
+<a class="flex items-center justify-center gap-2 mt-4 py-2.5 text-sm text-on-surface-variant font-medium" href="tel:+919443237266">
+<span class="material-symbols-outlined text-[#4b6544] text-[18px]">call</span>
++91 94432 37266
+</a>
+</div>
+</nav>
 <!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col justify-center pt-28 md:pt-36 pb-36 md:pb-44 overflow-hidden" id="hero">
+<section class="relative min-h-0 md:min-h-screen flex flex-col justify-center pt-[4.75rem] md:pt-36 pb-6 md:pb-44 overflow-hidden" id="hero">
 <!-- Background -->
 <div class="absolute inset-0">
 <img alt="" class="w-full h-full object-cover scale-105" id="hero-bg-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoWcft2RnntTZj4bnV_qa6fCQWebbjJXK94XaFrKcTwRShu8AmCOMySChkYmkMDrZ9UZPPTcDlLQrQz9XRfo6ElnjBQTDmdlsPW_n40PR4UbAR1vH9Miin9YJ0TNkmS4sLzklCggUJtbW989-uOyLEv-Ty9dvj5Exa-mQApKXQKX3vYwvtyzAbKAt2ih-4gwTF8tkmBBYZOaWbpGzQzlMsGVcySIirxvjDaCXyTTR8ejw_11upBAl1cerOEZF3ApLQglUHJN4P48"/>
@@ -491,12 +572,12 @@ partner.
 Accredited electroplating, galvanising, and anodising for automotive, aerospace, and industrial workplaces. Get your components finished fast with processes that meet every compliance standard.
 </p>
 
-<div class="hero-animate hero-delay-4 flex flex-wrap gap-4">
-<a class="hero-btn-primary inline-flex items-center gap-2.5 px-7 py-3.5 font-bold text-sm" href="services.html">
+<div class="hero-animate hero-delay-4 hero-btn-row flex flex-col sm:flex-row gap-3 sm:gap-4">
+<a class="hero-btn-primary inline-flex items-center justify-center gap-2.5 px-7 py-3.5 font-bold text-sm w-full sm:w-auto" href="services.html">
 <span class="material-symbols-outlined text-[20px]">layers</span>
 View All Services
 </a>
-<a class="hero-btn-secondary inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-sm" href="enquiry.html">
+<a class="hero-btn-secondary inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-sm w-full sm:w-auto" href="enquiry.html">
 Get in Touch
 </a>
 </div>
@@ -551,10 +632,10 @@ Get in Touch
 </div>
 
 <!-- Bottom Stats Bar -->
-<div class="absolute bottom-6 md:bottom-10 left-0 right-0 z-20 px-margin-mobile md:px-margin-desktop hero-stats-up">
-<div class="container mx-auto">
-<div class="hero-stats-bar grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-x divide-white/10">
-<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5">
+<div class="relative md:absolute md:bottom-6 lg:bottom-10 left-0 right-0 z-20 mt-8 md:mt-0 hero-stats-up">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="hero-stats-bar grid grid-cols-2 lg:grid-cols-5">
+<div class="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-5 py-3.5 sm:py-5 hero-stat-item">
 <div class="hero-stat-icon flex items-center justify-center">
 <span class="material-symbols-outlined text-tertiary text-[20px]">star</span>
 </div>
@@ -563,7 +644,7 @@ Get in Touch
 <p class="text-white/50 text-[10px] sm:text-xs mt-0.5">Delivered</p>
 </div>
 </div>
-<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5">
+<div class="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-5 py-3.5 sm:py-5 hero-stat-item">
 <div class="hero-stat-icon flex items-center justify-center">
 <span class="material-symbols-outlined text-tertiary text-[20px]">verified</span>
 </div>
@@ -572,7 +653,7 @@ Get in Touch
 <p class="text-white/50 text-[10px] sm:text-xs mt-0.5">Focused</p>
 </div>
 </div>
-<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5">
+<div class="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-5 py-3.5 sm:py-5 hero-stat-item">
 <div class="hero-stat-icon flex items-center justify-center">
 <span class="material-symbols-outlined text-tertiary text-[20px]">factory</span>
 </div>
@@ -581,7 +662,7 @@ Get in Touch
 <p class="text-white/50 text-[10px] sm:text-xs mt-0.5">Facility</p>
 </div>
 </div>
-<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5">
+<div class="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-5 py-3.5 sm:py-5 hero-stat-item">
 <div class="hero-stat-icon flex items-center justify-center">
 <span class="material-symbols-outlined text-tertiary text-[20px]">engineering</span>
 </div>
@@ -590,7 +671,7 @@ Get in Touch
 <p class="text-white/50 text-[10px] sm:text-xs mt-0.5">On Site</p>
 </div>
 </div>
-<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5 col-span-2 sm:col-span-1">
+<div class="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-5 py-3.5 sm:py-5 hero-stat-item col-span-2 lg:col-span-1">
 <div class="hero-stat-icon flex items-center justify-center">
 <span class="material-symbols-outlined text-tertiary text-[20px]">public</span>
 </div>
@@ -604,11 +685,11 @@ Get in Touch
 </div>
 </section>
 <!-- About Section -->
-<section class="py-32 bg-surface-container-lowest relative overflow-hidden">
+<section class="py-16 md:py-32 bg-surface-container-lowest relative overflow-hidden">
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-5 relative group">
-<div class="absolute -inset-4 border border-tertiary/20 scale-95 group-hover:scale-100 transition-transform duration-500"></div>
-<div class="relative overflow-hidden rounded-lg h-[600px]">
+<div class="absolute -inset-4 border border-tertiary/20 scale-95 group-hover:scale-100 transition-transform duration-500 hidden md:block"></div>
+<div class="relative overflow-hidden rounded-lg h-[260px] sm:h-[380px] md:h-[600px]">
 <img class="w-full h-full object-cover" data-alt="A highly detailed cinematic shot of a high-tech industrial laboratory where a robotic arm is carefully inspecting a chrome-finished turbine component. The lighting is deep industrial blue with sharp orange highlights reflecting off the metallic surfaces. The atmosphere is professional, sterile, and futuristic, representing high-precision engineering and manufacturing excellence at Sunshine Components." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaeZN5eaYsoGQdB7kIKwPTnKeBN-kXZg6pL9bwSxlHRErGS-N65XJDFgoFDuvgpwrQbHoTBOtzYWnSItIuP0h1Om4F1-J36xPFAGqBE8C1jHwa9lU3WpnVBvCWI2iKQn1XOGt-129TZiMDRdepHU03fCJEwpFy4CBerAC_r6yE5UvQ30nAiAMvRLVtoduieGkjDStKN7uTVtfsBk2wWEx9W5YoRvyZVtgJx-dkYl-cuVvsuMC-n3x7c0GIdOWQI5MAjmwaXNaalMo"/>
 </div>
 </div>
@@ -620,11 +701,11 @@ Get in Touch
                 </p>
 <div class="grid grid-cols-2 gap-8">
 <div class="flex flex-col gap-2">
-<span class="text-display-lg text-tertiary font-bold" id="counter1">0</span>
+<span class="mobile-stat-number text-display-lg text-tertiary font-bold" id="counter1">0</span>
 <span class="text-label-caps font-label-caps text-on-surface-variant tracking-[0.2em] uppercase">Years Excellence</span>
 </div>
 <div class="flex flex-col gap-2">
-<span class="text-display-lg text-tertiary font-bold" id="counter2">0</span>
+<span class="mobile-stat-number text-display-lg text-tertiary font-bold" id="counter2">0</span>
 <span class="text-label-caps font-label-caps text-on-surface-variant tracking-[0.2em] uppercase">Global Projects</span>
 </div>
 </div>
@@ -635,8 +716,8 @@ More About Us <span class="material-symbols-outlined">arrow_forward</span>
 </div>
 </section>
 <!-- Services Section -->
-<section class="py-32 bg-surface" id="services">
-<div class="container mx-auto px-margin-mobile md:px-margin-desktop text-center mb-20">
+<section class="py-16 md:py-32 bg-surface" id="services">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop text-center mb-12 md:mb-20">
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Our Finishing Capabilities</h2>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
                 World-class surface finishing techniques designed for the most demanding environments on Earth and beyond.
@@ -644,7 +725,7 @@ More About Us <span class="material-symbols-outlined">arrow_forward</span>
 </div>
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Service 1 -->
-<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="service-card glass-card p-6 md:p-10 flex flex-col gap-6">
 <div class="flex justify-between items-start">
 <div class="service-icon-chip">
 <span class="material-symbols-outlined text-tertiary text-[32px]">electric_bolt</span>
@@ -658,7 +739,7 @@ More About Us <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
 <!-- Service 2 -->
-<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="service-card glass-card p-6 md:p-10 flex flex-col gap-6">
 <div class="flex justify-between items-start">
 <div class="service-icon-chip">
 <span class="material-symbols-outlined text-tertiary text-[32px]">waves</span>
@@ -672,7 +753,7 @@ More About Us <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
 <!-- Service 3 -->
-<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="service-card glass-card p-6 md:p-10 flex flex-col gap-6">
 <div class="flex justify-between items-start">
 <div class="service-icon-chip">
 <span class="material-symbols-outlined text-tertiary text-[32px]">layers</span>
@@ -686,7 +767,7 @@ More About Us <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
 <!-- Service 4 -->
-<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="service-card glass-card p-6 md:p-10 flex flex-col gap-6">
 <div class="flex justify-between items-start">
 <div class="service-icon-chip">
 <span class="material-symbols-outlined text-tertiary text-[32px]">science</span>
@@ -700,7 +781,7 @@ More About Us <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
 <!-- Service 5 -->
-<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="service-card glass-card p-6 md:p-10 flex flex-col gap-6">
 <div class="flex justify-between items-start">
 <div class="service-icon-chip">
 <span class="material-symbols-outlined text-tertiary text-[32px]">water_drop</span>
@@ -1002,6 +1083,35 @@ Developed by <a class="footer-dev-link text-tertiary font-semibold" href="https:
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <script>
+    // Mobile navigation
+    (function initMobileNav() {
+        const btn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const drawer = document.getElementById('mobile-nav-drawer');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        if (!btn || !drawer || !overlay) return;
+
+        const current = window.location.pathname.split('/').pop() || 'index.html';
+        drawer.querySelectorAll('.mobile-nav-link').forEach(link => {
+            if (link.getAttribute('href') === current) link.classList.add('mobile-nav-link-active');
+        });
+
+        function setOpen(open) {
+            drawer.classList.toggle('translate-x-full', !open);
+            overlay.classList.toggle('opacity-0', !open);
+            overlay.classList.toggle('pointer-events-none', !open);
+            overlay.classList.toggle('opacity-100', open);
+            document.body.classList.toggle('menu-open', open);
+            drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+            overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+        }
+
+        btn.addEventListener('click', () => setOpen(drawer.classList.contains('translate-x-full')));
+        closeBtn?.addEventListener('click', () => setOpen(false));
+        overlay.addEventListener('click', () => setOpen(false));
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    })();
+
     // Hero feature slider
     (function initHeroSlider() {
         const slides = [
