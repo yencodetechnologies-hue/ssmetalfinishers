@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SUNSHINE | Precision Surface Finishing Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+        
+        body {
+            background-color: #faf9f4;
+            color: #1a1c19;
+            font-family: 'Geist', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            border: 1px solid transparent;
+            border-radius: 5px;
+            border-image: linear-gradient(135deg, rgba(23, 47, 20, 0.18), rgba(23, 47, 20, 0.06)) 1;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(75, 101, 68, 0.06);
+            border-image: linear-gradient(135deg, #4b6544, rgba(75, 101, 68, 0.15)) 1;
+        }
+
+        .orange-glow-btn {
+            background: #4b6544;
+            color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 0px #4b6544;
+            transition: all 0.3s ease;
+        }
+
+        .orange-glow-btn:hover {
+            box-shadow: 0 0 20px #4b6544;
+            transform: translateY(-2px);
+        }
+
+        .metallic-btn {
+            background: linear-gradient(145deg, #cdebc1, #97b48d);
+            color: #172f14;
+            border-radius: 5px;
+        }
+
+        .glow-line {
+            height: 2px;
+            background: #4b6544;
+            box-shadow: 0 0 10px #4b6544;
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(rgba(75, 101, 68, 0.06) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(75, 101, 68, 0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Hero — reference-style layout */
+        @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes heroSlideIn {
+            from { opacity: 0; transform: translateX(48px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes heroStatsUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-animate {
+            opacity: 0;
+            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-slide-in {
+            opacity: 0;
+            animation: heroSlideIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+        }
+
+        .hero-stats-up {
+            opacity: 0;
+            animation: heroStatsUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+        }
+
+        .hero-delay-1 { animation-delay: 0.1s; }
+        .hero-delay-2 { animation-delay: 0.22s; }
+        .hero-delay-3 { animation-delay: 0.34s; }
+        .hero-delay-4 { animation-delay: 0.46s; }
+
+        .hero-overlay {
+            background: linear-gradient(105deg, rgba(12, 20, 10, 0.93) 0%, rgba(12, 20, 10, 0.78) 42%, rgba(12, 20, 10, 0.52) 100%);
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-btn-primary {
+            background: #8fd67a;
+            color: #172f14;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-btn-primary:hover {
+            background: #a8e896;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(143, 214, 122, 0.35);
+        }
+
+        .hero-btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-feature-card {
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(22, 32, 20, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-slide-img {
+            transition: opacity 0.6s ease, transform 8s ease;
+        }
+
+        .hero-slide-img.active {
+            opacity: 1;
+            transform: scale(1.04);
+            z-index: 2;
+        }
+
+        .hero-slide-img.inactive {
+            opacity: 0;
+            transform: scale(1);
+            z-index: 1;
+        }
+
+        .hero-nav-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease;
+        }
+
+        .hero-nav-btn:hover {
+            background: rgba(143, 214, 122, 0.25);
+            border-color: rgba(143, 214, 122, 0.4);
+        }
+
+        .hero-progress-seg {
+            height: 3px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: background 0.4s ease;
+            cursor: pointer;
+        }
+
+        .hero-progress-seg.active {
+            background: #8fd67a;
+        }
+
+        .hero-stats-bar {
+            background: rgba(18, 28, 16, 0.88);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(143, 214, 122, 0.12);
+            border: 1px solid rgba(143, 214, 122, 0.2);
+            flex-shrink: 0;
+        }
+
+        .footer-dev-link {
+            transition: color 0.3s ease, letter-spacing 0.3s ease;
+        }
+
+        .footer-dev-link:hover {
+            color: #8fd67a;
+            letter-spacing: 0.05em;
+        }
+
+        .top-social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            color: currentColor;
+            transition: color 0.3s ease;
+        }
+
+        .top-social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .service-card {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(23, 47, 20, 0.12);
+        }
+
+        .service-icon-chip {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            background: rgba(143, 214, 122, 0.14);
+            border: 1px solid rgba(143, 214, 122, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-chip {
+            background: rgba(143, 214, 122, 0.24);
+            border-color: rgba(143, 214, 122, 0.5);
+        }
+
+        .service-learn-link {
+            transition: gap 0.3s ease;
+        }
+
+        .service-learn-link .material-symbols-outlined {
+            transition: transform 0.3s ease;
+        }
+
+        .service-learn-link:hover .material-symbols-outlined {
+            transform: translateX(4px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#1a1c19",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#4b6544",
+                      "surface": "#faf9f4",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "on-tertiary-container": "#aeabab",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "surface-container-high": "#e9e8e3",
+                      "on-primary-container": "#97b48d",
+                      "on-secondary-fixed-variant": "#44474b",
+                      "inverse-on-surface": "#f1f1ec",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#616569",
+                      "inverse-surface": "#2f312e",
+                      "tertiary-fixed": "#e5e2e1",
+                      "secondary": "#5b5f63",
+                      "on-surface-variant": "#434840",
+                      "on-primary-fixed-variant": "#344d2e",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#c4c6cc",
+                      "primary-container": "#2d4628",
+                      "on-primary-fixed": "#082007",
+                      "error-container": "#ffdad6",
+                      "primary": "#172f14",
+                      "outline-variant": "#c3c8bd",
+                      "secondary-fixed": "#e0e2e8",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#b1cfa7",
+                      "surface-variant": "#e3e3de",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#dbdad5",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed": "#181c20",
+                      "tertiary-container": "#414040",
+                      "surface-container-highest": "#e3e3de",
+                      "inverse-primary": "#b1cfa7",
+                      "surface-container": "#efeee9",
+                      "primary-fixed": "#cdebc1",
+                      "tertiary": "#8fd67a",
+                      "surface-bright": "#faf9f4",
+                      "on-surface": "#1a1c19",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "outline": "#73796f",
+                      "secondary-container": "#e0e2e8",
+                      "background": "#faf9f4",
+                      "surface-container-low": "#f4f4ef"
+              },
+              "borderRadius": {
+                      "DEFAULT": "5px",
+                      "sm": "5px",
+                      "lg": "5px",
+                      "xl": "5px",
+                      "2xl": "5px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "mono-data": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "label-caps": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "mono-data": ["14px", {"lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Info Bar -->
+<div class="fixed top-0 w-full z-50 bg-white text-on-surface-variant py-2 px-margin-desktop border-b border-outline-variant/40 hidden md:block">
+  <div class="container mx-auto flex justify-between items-center text-xs">
+    <div class="flex items-center gap-6">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[16px] text-[#4b6544]">call</span>
+        <span>+91 94432 37266</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[16px] text-[#4b6544]">mail</span>
+        <span>info@sunshinecomponents.com</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[16px] text-[#4b6544]">schedule</span>
+        <span>Mon–Sat: 9am–6pm IST</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <a aria-label="Facebook" class="top-social-icon hover:text-[#4b6544] text-on-surface-variant transition-colors" href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+      </a>
+      <a aria-label="Instagram" class="top-social-icon hover:text-[#4b6544] text-on-surface-variant transition-colors" href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a aria-label="YouTube" class="top-social-icon hover:text-[#4b6544] text-on-surface-variant transition-colors" href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a aria-label="WhatsApp" class="top-social-icon hover:text-[#4b6544] text-on-surface-variant transition-colors" href="https://wa.me/919443237266" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 md:top-9 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-outline-variant/40 h-24 flex justify-between items-center px-margin-mobile md:px-margin-desktop shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+<a aria-label="Sunshine home" class="flex items-center py-2 pr-4" href="#">
+  <div class="h-16 md:h-20 flex items-center overflow-hidden">
+    <img alt="Sunshine logo" class="h-14 md:h-16 w-auto max-w-[360px] md:max-w-[520px] object-contain" src="./assets/logo.png"/>
+  </div>
+</a>
+<nav class="hidden md:flex gap-10 items-center">
+<a class="text-[#4b6544] font-bold font-body-md border-b-2 border-[#4b6544] pb-1 transition-colors duration-300" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="#services">Services</a>
+<a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="#capabilities">Capabilities</a>
+<a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300" href="#contact">Contact</a>
+<button class="hero-btn-primary px-7 py-3 font-bold uppercase tracking-widest text-xs">Get a Quote</button>
+</nav>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center pt-28 md:pt-36 pb-36 md:pb-44 overflow-hidden" id="hero">
+<!-- Background -->
+<div class="absolute inset-0">
+<img alt="" class="w-full h-full object-cover scale-105" id="hero-bg-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoWcft2RnntTZj4bnV_qa6fCQWebbjJXK94XaFrKcTwRShu8AmCOMySChkYmkMDrZ9UZPPTcDlLQrQz9XRfo6ElnjBQTDmdlsPW_n40PR4UbAR1vH9Miin9YJ0TNkmS4sLzklCggUJtbW989-uOyLEv-Ty9dvj5Exa-mQApKXQKX3vYwvtyzAbKAt2ih-4gwTF8tkmBBYZOaWbpGzQzlMsGVcySIirxvjDaCXyTTR8ejw_11upBAl1cerOEZF3ApLQglUHJN4P48"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+<!-- Left: Hero Copy -->
+<div class="flex flex-col gap-7 md:gap-8">
+<h1 class="hero-animate hero-delay-2 text-[2.25rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] font-extrabold text-white leading-[1.08] tracking-tight">
+India's trusted<br/>
+<span class="text-tertiary">surface finishing</span><br/>
+partner.
+</h1>
+
+<p class="hero-animate hero-delay-3 text-base md:text-lg text-white/70 max-w-xl leading-relaxed font-body-lg">
+Accredited electroplating, galvanising, and anodising for automotive, aerospace, and industrial workplaces. Get your components finished fast with processes that meet every compliance standard.
+</p>
+
+<div class="hero-animate hero-delay-4 flex flex-wrap gap-4">
+<a class="hero-btn-primary inline-flex items-center gap-2.5 px-7 py-3.5 font-bold text-sm" href="#services">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+View All Services
+</a>
+<a class="hero-btn-secondary inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-sm" href="#contact">
+Get in Touch
+</a>
+</div>
+</div>
+
+<!-- Right: Feature Slider Card -->
+<div class="hero-slide-in relative">
+<div class="hero-feature-card">
+<div class="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden">
+<div class="absolute inset-0" id="hero-slider-images">
+<img alt="Advanced Electroplating" class="hero-slide-img active absolute inset-0 w-full h-full object-cover" data-slide="0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFASdKei_GOzer331QLhB46363V50WoCz26tufUgbqDMz6H_-vVNVf8U_SIXuFI20KPCznoYiocClC8vSwbxsDDQjAwAorRHv72z6BVMXDUwaD5Hqv4AbBBL__tCZiPyxgdrzYwnDirIQMzqLoS4q2_t6WYDE9cwJyHzUHxgvbTGxVUgTCgQvuGNzslXBmzo_sBvYKD-jToHfRMXr96VW8Ht_Q3fOYY1M5RNVLA4AT5gu96OjuEOsccU5rS4XVuOTtODaQRypOUwc"/>
+<img alt="Galvanising Operations" class="hero-slide-img inactive absolute inset-0 w-full h-full object-cover" data-slide="1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoWcft2RnntTZj4bnV_qa6fCQWebbjJXK94XaFrKcTwRShu8AmCOMySChkYmkMDrZ9UZPPTcDlLQrQz9XRfo6ElnjBQTDmdlsPW_n40PR4UbAR1vH9Miin9YJ0TNkmS4sLzklCggUJtbW989-uOyLEv-Ty9dvj5Exa-mQApKXQKX3vYwvtyzAbKAt2ih-4gwTF8tkmBBYZOaWbpGzQzlMsGVcySIirxvjDaCXyTTR8ejw_11upBAl1cerOEZF3ApLQglUHJN4P48"/>
+<img alt="Aerospace Anodising" class="hero-slide-img inactive absolute inset-0 w-full h-full object-cover" data-slide="2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmTr12JJanVY1SKWy3wMhM49w0BHmz6_oHoh5wDOfJF31vq1zgdKfYfvwsKBEFEZBQYKggoAQeeT9vXuAC3Pu08GfY25flpg0GYrYMieZnMyU8ZGJeeQv1vNR9IJb983GRHJWBeOJtjiw-V-1AM-YMi0KOF05qhlVpGbQy16iypXGTIbJCUtKoUXyvvFRbADZlc9GhP0VTcmdjbPXH22HiwPfjYg8Y5XXqILegxUtK08l9L9I14l0wBBQ5AYYcZuxnbbdTkJOJ0C4"/>
+<img alt="Sub-Assembly Portfolio" class="hero-slide-img inactive absolute inset-0 w-full h-full object-cover" data-slide="3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNirgKz-w0eNS2R-TeDdZoQ0Acpe0Pg0Gf70MlTKJroYm_hmxhGU0rJ-rXQIZ9dyFkG21R8FEbWBL0m8lahGwkYpWgl9xFHs_dD6SmWRhNDn16skVNyuh5TttA51Mh9ZKMufL85tlzjPI7XDdqBmJz2BDdmNPvXBAapaALYLboZQ8He-Tl1vjO8xLNdvbvXKEUN8PIN92H_hU2ec5htLxCESBE2y6iKH8QlaV4ve0NE_p-2J4mQ3vRk_180Guq_ZQmfcr4AzMYlOo"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+
+<!-- Top-right controls -->
+<div class="absolute top-4 right-4 flex gap-2 z-10">
+<button aria-label="Expand" class="hero-nav-btn flex items-center justify-center text-white/80 hover:text-white" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_full</span>
+</button>
+<button aria-label="Pause slideshow" class="hero-nav-btn flex items-center justify-center text-white/80 hover:text-white" id="hero-slider-toggle" type="button">
+<span class="material-symbols-outlined text-[18px]" id="hero-slider-toggle-icon">pause</span>
+</button>
+</div>
+
+<!-- Side nav arrows -->
+<button aria-label="Previous slide" class="hero-nav-btn absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center text-white" id="hero-slider-prev" type="button">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button aria-label="Next slide" class="hero-nav-btn absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center text-white" id="hero-slider-next" type="button">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+
+<!-- Slide info -->
+<div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-10">
+<span class="inline-block px-3 py-1 rounded-md bg-tertiary text-[#172f14] text-[10px] font-bold uppercase tracking-widest mb-2" id="hero-slide-badge">Electroplating</span>
+<p class="text-white font-semibold text-sm sm:text-base leading-snug" id="hero-slide-title">Advanced Chrome &amp; Nickel Electroplating for Precision Components</p>
+</div>
+</div>
+
+<!-- Progress bar -->
+<div class="flex gap-2 px-5 py-4 border-t border-white/10" id="hero-slider-progress">
+<button aria-label="Slide 1" class="hero-progress-seg active flex-1" data-index="0" type="button"></button>
+<button aria-label="Slide 2" class="hero-progress-seg flex-1" data-index="1" type="button"></button>
+<button aria-label="Slide 3" class="hero-progress-seg flex-1" data-index="2" type="button"></button>
+<button aria-label="Slide 4" class="hero-progress-seg flex-1" data-index="3" type="button"></button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bottom Stats Bar -->
+<div class="absolute bottom-6 md:bottom-10 left-0 right-0 z-20 px-margin-mobile md:px-margin-desktop hero-stats-up">
+<div class="container mx-auto">
+<div class="hero-stats-bar grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-x divide-white/10">
+<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5">
+<div class="hero-stat-icon flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[20px]">star</span>
+</div>
+<div>
+<p class="text-white font-bold text-xs sm:text-sm leading-tight">1200+ Projects</p>
+<p class="text-white/50 text-[10px] sm:text-xs mt-0.5">Delivered</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5">
+<div class="hero-stat-icon flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[20px]">verified</span>
+</div>
+<div>
+<p class="text-white font-bold text-xs sm:text-sm leading-tight">100% Quality</p>
+<p class="text-white/50 text-[10px] sm:text-xs mt-0.5">Focused</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5">
+<div class="hero-stat-icon flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[20px]">factory</span>
+</div>
+<div>
+<p class="text-white font-bold text-xs sm:text-sm leading-tight">ISO Certified</p>
+<p class="text-white/50 text-[10px] sm:text-xs mt-0.5">Facility</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5">
+<div class="hero-stat-icon flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[20px]">engineering</span>
+</div>
+<div>
+<p class="text-white font-bold text-xs sm:text-sm leading-tight">Expert Engineers</p>
+<p class="text-white/50 text-[10px] sm:text-xs mt-0.5">On Site</p>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 sm:px-5 py-4 sm:py-5 col-span-2 sm:col-span-1">
+<div class="hero-stat-icon flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[20px]">public</span>
+</div>
+<div>
+<p class="text-white font-bold text-xs sm:text-sm leading-tight">Global Partners</p>
+<p class="text-white/50 text-[10px] sm:text-xs mt-0.5">Recognised</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 bg-surface-container-lowest relative overflow-hidden">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 relative group">
+<div class="absolute -inset-4 border border-tertiary/20 scale-95 group-hover:scale-100 transition-transform duration-500"></div>
+<div class="relative overflow-hidden rounded-lg h-[600px]">
+<img class="w-full h-full object-cover" data-alt="A highly detailed cinematic shot of a high-tech industrial laboratory where a robotic arm is carefully inspecting a chrome-finished turbine component. The lighting is deep industrial blue with sharp orange highlights reflecting off the metallic surfaces. The atmosphere is professional, sterile, and futuristic, representing high-precision engineering and manufacturing excellence at Sunshine Components." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaeZN5eaYsoGQdB7kIKwPTnKeBN-kXZg6pL9bwSxlHRErGS-N65XJDFgoFDuvgpwrQbHoTBOtzYWnSItIuP0h1Om4F1-J36xPFAGqBE8C1jHwa9lU3WpnVBvCWI2iKQn1XOGt-129TZiMDRdepHU03fCJEwpFy4CBerAC_r6yE5UvQ30nAiAMvRLVtoduieGkjDStKN7uTVtfsBk2wWEx9W5YoRvyZVtgJx-dkYl-cuVvsuMC-n3x7c0GIdOWQI5MAjmwaXNaalMo"/>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col gap-8 md:pl-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Precision Engineered <br/><span class="text-tertiary">Manufacturing Heritage</span></h2>
+<div class="w-20 glow-line"></div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    At Sunshine Components, we don't just finish surfaces; we engineer durability. With over three decades of mastery in sub-assembly manufacturing, our facility operates at the intersection of traditional metallurgy and futuristic surface science.
+                </p>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-2">
+<span class="text-display-lg text-tertiary font-bold" id="counter1">0</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant tracking-[0.2em] uppercase">Years Excellence</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-display-lg text-tertiary font-bold" id="counter2">0</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant tracking-[0.2em] uppercase">Global Projects</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 bg-surface" id="services">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Our Finishing Capabilities</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                World-class surface finishing techniques designed for the most demanding environments on Earth and beyond.
+            </p>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service 1 -->
+<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div class="service-icon-chip">
+<span class="material-symbols-outlined text-tertiary text-[32px]">electric_bolt</span>
+</div>
+<span class="text-outline/40 font-headline-md">01</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Electroplating</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Superior molecular bonding for enhanced conductivity and corrosion resistance across various metallic substrates.</p>
+<a class="service-learn-link text-tertiary font-bold uppercase tracking-widest text-xs flex items-center gap-2 mt-auto" href="electroplating.html">
+                    Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div class="service-icon-chip">
+<span class="material-symbols-outlined text-tertiary text-[32px]">waves</span>
+</div>
+<span class="text-outline/40 font-headline-md">02</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Galvanising</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Hot-dip and electrolytic galvanising solutions for structural components requiring extreme weather protection.</p>
+<a class="service-learn-link text-tertiary font-bold uppercase tracking-widest text-xs flex items-center gap-2 mt-auto" href="galvanising.html">
+                    Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div class="service-icon-chip">
+<span class="material-symbols-outlined text-tertiary text-[32px]">layers</span>
+</div>
+<span class="text-outline/40 font-headline-md">03</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Anodising</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Specialized hard-coat aluminium anodising for aerospace-grade wear resistance and dielectric strength.</p>
+<a class="service-learn-link text-tertiary font-bold uppercase tracking-widest text-xs flex items-center gap-2 mt-auto" href="anodising.html">
+                    Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Service 4 -->
+<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div class="service-icon-chip">
+<span class="material-symbols-outlined text-tertiary text-[32px]">science</span>
+</div>
+<span class="text-outline/40 font-headline-md">04</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Zinc Nickel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The gold standard for automotive fastener protection, providing over 1000 hours of salt spray resistance.</p>
+<a class="service-learn-link text-tertiary font-bold uppercase tracking-widest text-xs flex items-center gap-2 mt-auto" href="zinc-nickel.html">
+                    Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Service 5 -->
+<div class="service-card glass-card p-10 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div class="service-icon-chip">
+<span class="material-symbols-outlined text-tertiary text-[32px]">water_drop</span>
+</div>
+<span class="text-outline/40 font-headline-md">05</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cyanide Copper</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Precise copper plating for architectural finishes and heavy-duty electrical components.</p>
+<a class="service-learn-link text-tertiary font-bold uppercase tracking-widest text-xs flex items-center gap-2 mt-auto" href="cyanide-copper.html">
+                    Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Service 6 -->
+<div class="service-card glass-card p-10 flex flex-col gap-6 border-dashed border-tertiary/30 items-center justify-center text-center">
+<div class="service-icon-chip">
+<span class="material-symbols-outlined text-tertiary text-[32px]">tune</span>
+</div>
+<p class="font-headline-md text-headline-md text-tertiary italic">Custom Solutions</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Need a bespoke finishing protocol for a specific alloy?</p>
+<button class="mt-2 orange-glow-btn px-6 py-2">Consult an Engineer</button>
+</div>
+</div>
+</section>
+<!-- Work Process Section -->
+<section class="py-24 md:py-32 bg-primary-container relative overflow-hidden">
+  <!-- ambient accents -->
+  <div class="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-tertiary/10 blur-3xl"></div>
+  <div class="absolute -bottom-28 -left-28 w-[560px] h-[560px] rounded-full bg-primary/10 blur-3xl"></div>
+  <div class="absolute inset-0 grid-bg opacity-20"></div>
+
+  <div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+    <div class="max-w-3xl mx-auto text-center mb-14 md:mb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1 glass-card mx-auto">
+        <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+        <span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-[0.2em]">Process</span>
+      </div>
+      <h2 class="font-headline-lg text-headline-lg text-on-surface mt-6">Machined to Perfection</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-4">
+        A disciplined workflow that protects tolerances, improves adhesion, and delivers repeatable finishes at scale.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- desktop connector line -->
+      <div class="hidden md:block absolute top-[34px] left-0 right-0 h-[2px] bg-white/10">
+        <div class="h-full bg-tertiary/70 w-[72%] glow-line"></div>
+      </div>
+
+      <!-- mobile connector line -->
+      <div class="md:hidden absolute left-7 top-0 bottom-0 w-[2px] bg-white/10">
+        <div class="w-full bg-tertiary/70 h-[72%] glow-line"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-gutter relative">
+        <!-- Step 1 -->
+        <div class="group relative md:text-center pl-16 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-14 h-14 rounded-full glass-card flex items-center justify-center z-10 border border-white/10 group-hover:border-tertiary/40 transition-colors">
+            <span class="material-symbols-outlined text-tertiary text-2xl">biotech</span>
+          </div>
+          <div class="glass-card p-7 md:pt-20 md:pb-8 md:px-8 mt-2 md:mt-0 transition-transform duration-300 group-hover:-translate-y-1">
+            <div class="flex items-center justify-between md:justify-center md:gap-3">
+              <span class="text-label-caps font-label-caps text-tertiary uppercase tracking-[0.2em]">Step 01</span>
+              <span class="hidden md:inline text-xs text-on-surface-variant/80">—</span>
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mt-3">Technical Analysis</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3 leading-relaxed">
+              Metallurgical assessment and tolerance mapping tailored to your alloy, geometry, and end-use environment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="group relative md:text-center pl-16 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-14 h-14 rounded-full glass-card flex items-center justify-center z-10 border border-white/10 group-hover:border-tertiary/40 transition-colors">
+            <span class="material-symbols-outlined text-tertiary text-2xl">cleaning_services</span>
+          </div>
+          <div class="glass-card p-7 md:pt-20 md:pb-8 md:px-8 mt-2 md:mt-0 transition-transform duration-300 group-hover:-translate-y-1">
+            <div class="flex items-center justify-between md:justify-center md:gap-3">
+              <span class="text-label-caps font-label-caps text-tertiary uppercase tracking-[0.2em]">Step 02</span>
+              <span class="hidden md:inline text-xs text-on-surface-variant/80">—</span>
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mt-3">Surface Prep</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3 leading-relaxed">
+              Industrial degreasing + ultrasonic cleaning that removes films and activates the surface for maximum adhesion.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 (highlight) -->
+        <div class="group relative md:text-center pl-16 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-14 h-14 rounded-full glass-card flex items-center justify-center z-10 border-2 border-tertiary/80 shadow-[0_0_24px_rgba(255,140,0,0.22)]">
+            <span class="material-symbols-outlined text-tertiary text-2xl">precision_manufacturing</span>
+          </div>
+          <div class="glass-card p-7 md:pt-20 md:pb-8 md:px-8 mt-2 md:mt-0 transition-transform duration-300 group-hover:-translate-y-1">
+            <div class="flex items-center justify-between md:justify-center md:gap-3">
+              <span class="text-label-caps font-label-caps text-tertiary uppercase tracking-[0.2em]">Step 03</span>
+              <span class="hidden md:inline text-xs text-on-surface-variant/80">—</span>
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mt-3">Precision Finish</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3 leading-relaxed">
+              Controlled finishing protocols executed with tight process windows in ISO-aligned clean environments.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="group relative md:text-center pl-16 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-14 h-14 rounded-full glass-card flex items-center justify-center z-10 border border-white/10 group-hover:border-tertiary/40 transition-colors">
+            <span class="material-symbols-outlined text-tertiary text-2xl">fact_check</span>
+          </div>
+          <div class="glass-card p-7 md:pt-20 md:pb-8 md:px-8 mt-2 md:mt-0 transition-transform duration-300 group-hover:-translate-y-1">
+            <div class="flex items-center justify-between md:justify-center md:gap-3">
+              <span class="text-label-caps font-label-caps text-tertiary uppercase tracking-[0.2em]">Step 04</span>
+              <span class="hidden md:inline text-xs text-on-surface-variant/80">—</span>
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mt-3">Quality Control</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3 leading-relaxed">
+              XRF verification, thickness checks, and final assembly certification—documented for traceability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Industries Grid -->
+<section class="py-32 bg-surface">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-1 py-10">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Industries <br/><span class="text-tertiary">Served</span></h2>
+<p class="mt-4 text-on-surface-variant">Our components thrive in the most hostile environments imaginable.</p>
+</div>
+<div class="md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="glass-card p-8 flex flex-col items-center gap-4 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-tertiary text-5xl">directions_car</span>
+<p class="font-label-caps font-label-caps uppercase tracking-widest text-xs">Automobile</p>
+</div>
+<div class="glass-card p-8 flex flex-col items-center gap-4 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-tertiary text-5xl">flight</span>
+<p class="font-label-caps font-label-caps uppercase tracking-widest text-xs">Aerospace</p>
+</div>
+<div class="glass-card p-8 flex flex-col items-center gap-4 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-tertiary text-5xl">rocket_launch</span>
+<p class="font-label-caps font-label-caps uppercase tracking-widest text-xs">Defense</p>
+</div>
+<div class="glass-card p-8 flex flex-col items-center gap-4 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-tertiary text-5xl">bolt</span>
+<p class="font-label-caps font-label-caps uppercase tracking-widest text-xs">Energy</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<section class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="columns-1 md:columns-3 gap-gutter space-y-6">
+<div class="relative group overflow-hidden glass-card">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="Close-up artistic photograph of a collection of precision-machined gears with a flawless chrome electroplating finish. The gears are arranged in a minimalist, architectural composition. The lighting captures the sharp, mirror-like reflections on the metal edges, with deep blue and orange light leaks creating a sense of industrial luxury and high-tech manufacturing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFASdKei_GOzer331QLhB46363V50WoCz26tufUgbqDMz6H_-vVNVf8U_SIXuFI20KPCznoYiocClC8vSwbxsDDQjAwAorRHv72z6BVMXDUwaD5Hqv4AbBBL__tCZiPyxgdrzYwnDirIQMzqLoS4q2_t6WYDE9cwJyHzUHxgvbTGxVUgTCgQvuGNzslXBmzo_sBvYKD-jToHfRMXr96VW8Ht_Q3fOYY1M5RNVLA4AT5gu96OjuEOsccU5rS4XVuOTtODaQRypOUwc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-tertiary font-bold uppercase text-xs tracking-widest">Advanced Electroplating</p>
+</div>
+</div>
+<div class="relative group overflow-hidden glass-card">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="A wide-angle cinematic shot of the Sunshine Components assembly line. Workers in high-visibility professional gear are supervising robotic systems as they move massive industrial components through a galvanising bath. The scene is illuminated by glowing orange sparks and cool blue overhead industrial lights, creating a high-contrast, dynamic atmosphere of a modern Fortune 500 factory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoWcft2RnntTZj4bnV_qa6fCQWebbjJXK94XaFrKcTwRShu8AmCOMySChkYmkMDrZ9UZPPTcDlLQrQz9XRfo6ElnjBQTDmdlsPW_n40PR4UbAR1vH9Miin9YJ0TNkmS4sLzklCggUJtbW989-uOyLEv-Ty9dvj5Exa-mQApKXQKX3vYwvtyzAbKAt2ih-4gwTF8tkmBBYZOaWbpGzQzlMsGVcySIirxvjDaCXyTTR8ejw_11upBAl1cerOEZF3ApLQglUHJN4P48"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-tertiary font-bold uppercase text-xs tracking-widest">Main Assembly Floor</p>
+</div>
+</div>
+<div class="relative group overflow-hidden glass-card">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="Macro detail of an aluminium component with a specialized anodised finish. The surface has a subtle, brushed texture with a deep metallic silver sheen. High-tech sensors are shown measuring the surface uniformity with laser pointers creating small red dots on the metal. The aesthetic is extremely clean, sharp, and technical, representing high-end engineering standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmTr12JJanVY1SKWy3wMhM49w0BHmz6_oHoh5wDOfJF31vq1zgdKfYfvwsKBEFEZBQYKggoAQeeT9vXuAC3Pu08GfY25flpg0GYrYMieZnMyU8ZGJeeQv1vNR9IJb983GRHJWBeOJtjiw-V-1AM-YMi0KOF05qhlVpGbQy16iypXGTIbJCUtKoUXyvvFRbADZlc9GhP0VTcmdjbPXH22HiwPfjYg8Y5XXqILegxUtK08l9L9I14l0wBBQ5AYYcZuxnbbdTkJOJ0C4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-tertiary font-bold uppercase text-xs tracking-widest">Aerospace QA Testing</p>
+</div>
+</div>
+<div class="relative group overflow-hidden glass-card">
+<img class="w-full hover:scale-110 transition-transform duration-700" data-alt="A futuristic presentation of various sub-assembly components, including valves, springs, and connectors, laid out in a grid pattern on a dark glass surface. Each part is finished in a different metallic coating, from gold-tinted cyanide copper to charcoal zinc-nickel. The lighting is sophisticated and moody, using soft glowing orange accents to highlight the precision edges of each part." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNirgKz-w0eNS2R-TeDdZoQ0Acpe0Pg0Gf70MlTKJroYm_hmxhGU0rJ-rXQIZ9dyFkG21R8FEbWBL0m8lahGwkYpWgl9xFHs_dD6SmWRhNDn16skVNyuh5TttA51Mh9ZKMufL85tlzjPI7XDdqBmJz2BDdmNPvXBAapaALYLboZQ8He-Tl1vjO8xLNdvbvXKEUN8PIN92H_hU2ec5htLxCESBE2y6iKH8QlaV4ve0NE_p-2J4mQ3vRk_180Guq_ZQmfcr4AzMYlOo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-tertiary font-bold uppercase text-xs tracking-widest">Sub-Assembly Portfolio</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 bg-surface" id="contact">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+<div class="flex flex-col gap-10">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Contact <br/><span class="text-tertiary">Us</span></h2>
+<p class="text-on-surface-variant font-body-md">Reach us for quotes, plating requirements, or production support. We’ll respond quickly.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-on-surface font-bold">Office Address</p>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="https://maps.app.goo.gl/AMJnKS63fA8tpnt77" rel="noopener noreferrer" target="_blank">
+CS-66, PIPDIC Industrial Estate, Near BSNL Telephone Exchange, Mettupalayam, Puducherry - 605009
+</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">factory</span>
+</div>
+<div>
+<p class="text-on-surface font-bold">Unit / Works</p>
+<p class="text-on-surface-variant">R.S. No. 2, Plot No. 145 - 146, Vazhudavur Road, Opp. Ponlait, Kurumbapet, Puducherry - 605009</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="text-on-surface font-bold">Mobile</p>
+<div class="flex flex-col gap-1">
+  <a class="text-on-surface-variant hover:text-tertiary transition-colors" href="tel:+919443237266">+91 94432 37266</a>
+  <a class="text-on-surface-variant hover:text-tertiary transition-colors" href="tel:+919487766871">+91 94877 66871</a>
+</div>
+</div>
+</div>
+</div>
+<div class="h-64 glass-card overflow-hidden">
+<iframe class="w-full h-full grayscale hover:grayscale-0 transition-all duration-500" style="border:0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.32572184642!2d79.7855853!3d11.951935599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53611fc3163893%3A0xa0260cee8dfbff7c!2sSunshine%20Components%20%26%20Sub-Assemblies!5e0!3m2!1sen!2sin!4v1784703461273!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Sunshine Components location map"></iframe>
+</div>
+<div class="glass-card p-6 md:p-8">
+  <div class="flex items-start gap-4">
+    <div class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-tertiary shrink-0">
+      <span class="material-symbols-outlined">receipt_long</span>
+    </div>
+    <div>
+      <p class="text-on-surface font-bold">GST No.</p>
+      <p class="text-on-surface-variant">34AAPPV5722K2Z3</p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="glass-card p-12">
+<form class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Full Name</label>
+<input class="bg-surface-container border border-white/10 rounded-lg p-4 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none text-on-surface transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="flex flex-col gap-2">
+    <label class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Mobile Number</label>
+    <input class="bg-surface-container border border-white/10 rounded-lg p-4 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none text-on-surface transition-all" placeholder="+91 XXXXX XXXXX" type="tel"/>
+  </div>
+  <div class="flex flex-col gap-2">
+    <label class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Email</label>
+    <input class="bg-surface-container border border-white/10 rounded-lg p-4 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none text-on-surface transition-all" placeholder="you@example.com" type="email"/>
+  </div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Subject</label>
+<input class="bg-surface-container border border-white/10 rounded-lg p-4 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none text-on-surface transition-all" placeholder="Quote request / Job work / Support" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Message</label>
+<textarea class="bg-surface-container border border-white/10 rounded-lg p-4 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none text-on-surface transition-all" placeholder="Tell us what you need (material, quantity, finish, timeline)..." rows="5"></textarea>
+</div>
+<button class="orange-glow-btn py-5 font-bold uppercase tracking-[0.2em] mt-4" type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary relative border-t border-white/10 py-20 px-margin-mobile md:px-margin-desktop">
+<div class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-3xl">precision_manufacturing</span>
+<span class="font-display-lg text-headline-md text-white tracking-tighter uppercase font-extrabold">SUNSHINE</span>
+</div>
+<p class="text-white/75 font-body-md">Precision. Integrity. Innovation. Global leaders in industrial surface science and sub-assembly manufacturing.</p>
+</div>
+<div class="md:col-span-2">
+<h5 class="text-tertiary font-bold mb-6 uppercase tracking-widest text-xs">Navigation</h5>
+<ul class="space-y-4 text-white/75 font-body-md">
+<li><a class="hover:text-white transition-colors" href="#">Capabilities</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Projects</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Compliance</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="text-tertiary font-bold mb-6 uppercase tracking-widest text-xs">Resources</h5>
+<ul class="space-y-4 text-white/75 font-body-md">
+<li><a class="hover:text-white transition-colors" href="#">White Papers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">MSDS Library</a></li>
+<li><a class="hover:text-white transition-colors" href="#">ISO Certifications</a></li>
+</ul>
+</div>
+<div class="md:col-span-4 flex flex-col gap-6">
+<h5 class="text-tertiary font-bold mb-6 uppercase tracking-widest text-xs">Stay Informed</h5>
+<div class="flex gap-2">
+<input class="bg-white/10 border border-white/10 rounded-lg p-4 flex-grow focus:ring-1 focus:ring-tertiary text-white placeholder:text-white/50" placeholder="Industry Updates" type="text"/>
+<button class="bg-tertiary text-[#071a52] rounded-lg px-6 font-bold uppercase text-xs">Join</button>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:text-tertiary" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:text-tertiary" href="#">
+<span class="material-symbols-outlined">rocket</span>
+</a>
+</div>
+</div>
+</div>
+<div class="container mx-auto mt-20 pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-6 text-white/70 text-xs font-label-caps uppercase tracking-widest">
+<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-center sm:text-left">
+<p>© 2026 Sunshine Components &amp; Sub-Assemblies. All Rights Reserved.</p>
+<span class="hidden sm:inline text-white/30">|</span>
+<p class="text-white/50 normal-case tracking-normal font-body-md text-sm">
+Developed by <a class="footer-dev-link text-tertiary font-semibold" href="https://yencode.com" rel="noopener noreferrer" target="_blank">Yencode Technologies</a>
+</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-8">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Compliance</a>
+</div>
+</div>
+</footer>
+<script>
+    // Hero feature slider
+    (function initHeroSlider() {
+        const slides = [
+            { badge: 'Electroplating', title: 'Advanced Chrome & Nickel Electroplating for Precision Components' },
+            { badge: 'Galvanising', title: 'Hot-Dip & Electrolytic Galvanising for Structural Protection' },
+            { badge: 'Anodising', title: 'Aerospace-Grade Hard-Coat Anodising for Aluminium Components' },
+            { badge: 'Sub-Assembly', title: 'Custom Sub-Assembly Manufacturing & Surface Finishing Portfolio' }
+        ];
+
+        let current = 0;
+        let playing = true;
+        let timer = null;
+        const interval = 5000;
+
+        const images = document.querySelectorAll('.hero-slide-img');
+        const badge = document.getElementById('hero-slide-badge');
+        const title = document.getElementById('hero-slide-title');
+        const segs = document.querySelectorAll('.hero-progress-seg');
+        const prevBtn = document.getElementById('hero-slider-prev');
+        const nextBtn = document.getElementById('hero-slider-next');
+        const toggleBtn = document.getElementById('hero-slider-toggle');
+        const toggleIcon = document.getElementById('hero-slider-toggle-icon');
+
+        function goTo(index) {
+            current = (index + slides.length) % slides.length;
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === current);
+                img.classList.toggle('inactive', i !== current);
+            });
+            segs.forEach((seg, i) => seg.classList.toggle('active', i === current));
+            if (badge) badge.textContent = slides[current].badge;
+            if (title) title.textContent = slides[current].title;
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        function startAutoplay() {
+            stopAutoplay();
+            if (playing) timer = setInterval(next, interval);
+        }
+
+        function stopAutoplay() {
+            if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        prevBtn?.addEventListener('click', () => { prev(); startAutoplay(); });
+        nextBtn?.addEventListener('click', () => { next(); startAutoplay(); });
+
+        segs.forEach(seg => {
+            seg.addEventListener('click', () => {
+                goTo(parseInt(seg.dataset.index, 10));
+                startAutoplay();
+            });
+        });
+
+        toggleBtn?.addEventListener('click', () => {
+            playing = !playing;
+            if (toggleIcon) toggleIcon.textContent = playing ? 'pause' : 'play_arrow';
+            startAutoplay();
+        });
+
+        goTo(0);
+        startAutoplay();
+    })();
+
+    // Simple counter animation
+    function animateCounter(id, target) {
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            const el = document.getElementById(id);
+            if(el) el.textContent = Math.floor(current) + (target > 100 ? '+' : '');
+        }, 30);
+    }
+
+    // Intersection Observer for counters
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter('counter1', 35);
+                animateCounter('counter2', 1200);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const counterSection = document.querySelector('#counter1')?.parentElement?.parentElement;
+    if(counterSection) observer.observe(counterSection);
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+</body></html>
