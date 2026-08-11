@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<<<<<<< HEAD
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -8,6 +9,65 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
+=======
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact Us | Sunshine Metal Finishers Pvt Ltd</title>
+    <meta name="description"
+        content="Contact Sunshine Metal Finishers Pvt Ltd in Villupuram, Tamil Nadu for quotes, plating requirements, and production support." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#172f14",
+                        "primary-dark": "#0b1709",
+                        "primary-container": "#20391c",
+                        tertiary: "#8fd67a",
+                        "tertiary-light": "#b5f3a3",
+                        surface: "#faf9f4",
+                        "surface-dark": "#101610",
+                        "surface-container": "#efeee9",
+                        "surface-container-low": "#f4f4ef",
+                        "on-surface": "#1a1c19",
+                        "on-surface-variant": "#434840",
+                        outline: "#73796f"
+                    },
+
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        gutter: "24px"
+                    },
+
+                    fontFamily: {
+                        geist: ["Geist", "sans-serif"]
+                    },
+
+                    borderRadius: {
+                        DEFAULT: "8px",
+                        sm: "6px",
+                        lg: "12px",
+                        xl: "18px",
+                        "2xl": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+>>>>>>> 5f4359d (Design update)
         @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
         body {
@@ -58,7 +118,11 @@
 
         .grid-bg {
             background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+<<<<<<< HEAD
                               linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+=======
+                linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+>>>>>>> 5f4359d (Design update)
             background-size: 40px 40px;
         }
 
@@ -67,9 +131,23 @@
         }
 
         @keyframes float {
+<<<<<<< HEAD
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
+=======
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+>>>>>>> 5f4359d (Design update)
         }
 
         .animate-float {
@@ -139,6 +217,7 @@
             height: 18px;
             fill: currentColor;
         }
+<<<<<<< HEAD
         .whatsapp-float {
             position: fixed;
             bottom: 24px;
@@ -159,10 +238,60 @@
             fill: #25D366;
             filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.25));
             animation: wa-float-pulse 2.5s ease-in-out infinite;
+=======
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 24px;
+            bottom: 24px;
+
+            z-index: 9999;
+
+            width: 62px;
+            height: 62px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #25d366;
+
+            box-shadow:
+                0 8px 25px rgba(37, 211, 102, .3);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .whatsapp-float::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -7px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(37, 211, 102, .35);
+
+            animation: whatsappPulse 2s infinite;
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+
+            fill: white;
+>>>>>>> 5f4359d (Design update)
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
+<<<<<<< HEAD
         }
 
         .whatsapp-float:hover svg {
@@ -172,6 +301,23 @@
         @keyframes wa-float-pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.06); }
+=======
+
+            box-shadow:
+                0 12px 35px rgba(37, 211, 102, .5);
+        }
+
+        @keyframes wa-float-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.06);
+            }
+>>>>>>> 5f4359d (Design update)
         }
 
         @media (max-width: 640px) {
@@ -182,6 +328,10 @@
                 height: 52px;
             }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5f4359d (Design update)
         /* Mobile UI */
         .mobile-nav-link {
             display: block;
@@ -202,6 +352,10 @@
         body.menu-open {
             overflow: hidden;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5f4359d (Design update)
         .hero-btn-primary {
             background: #8fd67a;
             color: #172f14;
@@ -232,7 +386,13 @@
             border-bottom: 1px solid rgba(23, 47, 20, 0.08);
         }
 
+<<<<<<< HEAD
         .spec-row:last-child { border-bottom: none; }
+=======
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+>>>>>>> 5f4359d (Design update)
 
         .page-hero {
             background: linear-gradient(105deg, rgba(12, 20, 10, 0.93) 0%, rgba(12, 20, 10, 0.8) 60%, rgba(12, 20, 10, 0.65) 100%);
@@ -240,7 +400,11 @@
 
         .form-field {
             background: #efeee9;
+<<<<<<< HEAD
             border: 1px solid rgba(23,47,20,0.12);
+=======
+            border: 1px solid rgba(23, 47, 20, 0.12);
+>>>>>>> 5f4359d (Design update)
             border-radius: 5px;
             padding: 14px 16px;
             transition: all 0.25s ease;
@@ -251,7 +415,11 @@
         .form-field:focus {
             outline: none;
             border-color: #4b6544;
+<<<<<<< HEAD
             box-shadow: 0 0 0 3px rgba(75,101,68,0.15);
+=======
+            box-shadow: 0 0 0 3px rgba(75, 101, 68, 0.15);
+>>>>>>> 5f4359d (Design update)
             background: #ffffff;
         }
 
@@ -269,6 +437,7 @@
             flex-shrink: 0;
         }
     </style>
+<<<<<<< HEAD
 <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -621,3 +790,1480 @@ Developed by <a class="footer-dev-link text-tertiary font-semibold" href="https:
 })();
 </script>
 </body></html>
+=======
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#4b6544",
+                        "surface": "#faf9f4",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-tertiary-container": "#aeabab",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container-high": "#e9e8e3",
+                        "on-primary-container": "#97b48d",
+                        "on-secondary-fixed-variant": "#44474b",
+                        "inverse-on-surface": "#f1f1ec",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#616569",
+                        "inverse-surface": "#2f312e",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary": "#5b5f63",
+                        "on-surface-variant": "#434840",
+                        "on-primary-fixed-variant": "#344d2e",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c4c6cc",
+                        "primary-container": "#2d4628",
+                        "on-primary-fixed": "#082007",
+                        "error-container": "#ffdad6",
+                        "primary": "#172f14",
+                        "outline-variant": "#c3c8bd",
+                        "secondary-fixed": "#e0e2e8",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b1cfa7",
+                        "surface-variant": "#e3e3de",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#181c20",
+                        "tertiary-container": "#414040",
+                        "surface-container-highest": "#e3e3de",
+                        "inverse-primary": "#b1cfa7",
+                        "surface-container": "#efeee9",
+                        "primary-fixed": "#cdebc1",
+                        "tertiary": "#8fd67a",
+                        "surface-bright": "#faf9f4",
+                        "on-surface": "#1a1c19",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "outline": "#73796f",
+                        "secondary-container": "#e0e2e8",
+                        "background": "#faf9f4",
+                        "surface-container-low": "#f4f4ef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "5px",
+                        "sm": "5px",
+                        "lg": "5px",
+                        "xl": "5px",
+                        "2xl": "5px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "mono-data": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "label-caps": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-data": ["14px", {"lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- Top Info Bar -->
+  <div
+        class="fixed top-0 left-0 w-full z-50 bg-slate-900/95 backdrop-blur-md text-slate-200 py-1.5 px-margin-desktop border-b border-amber-500/20 hidden md:block shadow-lg transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center text-xs tracking-wide">
+
+            <!-- Contact Information Links -->
+            <div class="flex items-center gap-7">
+                <!-- Phone -->
+                <a href="tel:+919994654830"
+                    class="group flex items-center gap-2 hover:text-amber-400 transition-colors duration-200">
+                    <span
+                        class="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500/10 group-hover:bg-amber-500/20 text-[#F5A623] transition-all duration-200">
+                        <span class="material-symbols-outlined text-[14px]">call</span>
+                    </span>
+                    <span class="font-medium">+91 99946 54830</span>
+                </a>
+
+                <!-- Divider -->
+                <span class="h-3 w-[1px] bg-slate-700"></span>
+
+                <!-- Email -->
+                <a href="mailto:Info@ssmetalfinishers.com"
+                    class="group flex items-center gap-2 hover:text-amber-400 transition-colors duration-200">
+                    <span
+                        class="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500/10 group-hover:bg-amber-500/20 text-[#F5A623] transition-all duration-200">
+                        <span class="material-symbols-outlined text-[14px]">mail</span>
+                    </span>
+                    <span class="font-medium">Info@ssmetalfinishers.com</span>
+                </a>
+
+                <!-- Divider -->
+                <span class="h-3 w-[1px] bg-slate-700"></span>
+
+                <!-- Operating Hours -->
+                <div class="flex items-center gap-2 text-slate-400">
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-slate-800 text-amber-500/80">
+                        <span class="material-symbols-outlined text-[14px]">schedule</span>
+                    </span>
+                    <span>Mon–Sat: <strong class="text-slate-200 font-semibold">9am–6pm IST</strong></span>
+                </div>
+            </div>
+
+            <!-- Social Media Icons & Quick CTA -->
+            <div class="flex items-center gap-3">
+                <a aria-label="Facebook" href="#" target="_blank" rel="noopener noreferrer"
+                    class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 hover:scale-110 transition-all duration-200">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+                    </svg>
+                </a>
+
+                <a aria-label="Instagram" href="#" target="_blank" rel="noopener noreferrer"
+                    class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 hover:scale-110 transition-all duration-200">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                    </svg>
+                </a>
+
+                <a aria-label="YouTube" href="#" target="_blank" rel="noopener noreferrer"
+                    class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 hover:scale-110 transition-all duration-200">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+
+                <!-- Highlighted WhatsApp Button -->
+                <!-- <a aria-label="WhatsApp" href="https://wa.me/919994654830" target="_blank" rel="noopener noreferrer"
+                    class="ml-2 flex items-center gap-1.5 bg-emerald-600/90 hover:bg-emerald-500 text-white font-semibold px-3 py-1 rounded-full shadow-sm shadow-emerald-900/20 hover:scale-105 transition-all duration-200">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    <span>Chat</span>
+                </a> -->
+            </div>
+
+        </div>
+    </div>
+    <!-- Top Navigation Bar -->
+    <header
+        class="site-header fixed top-0 md:top-9 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-outline-variant/40 h-[4.25rem] md:h-24 flex justify-between items-center px-margin-desktop px-margin-mobile md:px-margin-desktop shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+        <a aria-label="Sunshine Metal Finishers Pvt Ltd home"
+            class="flex items-center py-1 pr-2 min-w-0 flex-1 md:flex-none" href="index.html">
+            <div class="h-10 md:h-20 flex items-center overflow-hidden">
+                <img alt="Sunshine Metal Finishers Pvt Ltd logo"
+                    class="logo-img h-9 md:h-16 w-auto max-w-[200px] md:max-w-[520px] object-contain object-left"
+                    src="./assets/logo.png" />
+            </div>
+        </a>
+        <nav class="hidden md:flex gap-10 items-center">
+            <a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300"
+                href="index.html">Home</a>
+            <a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300"
+                href="services.html">Services</a>
+
+                            <a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300"
+                href="gallery.html">Gallery</a>
+
+                <a class="text-on-surface-variant hover:text-[#4b6544] font-body-md font-medium transition-colors duration-300"
+                href="about.html">About</a>
+
+            <a class="text-[#4b6544] font-bold font-body-md border-b-2 border-[#4b6544] pb-1 transition-colors duration-300"
+                href="contact.html">Contact</a>
+
+            
+            <a class="hero-btn-primary px-7 py-3 font-bold uppercase tracking-widest text-xs inline-block"
+                href="enquiry.html">Enquire Now</a>
+        </nav>
+        <button aria-label="Open menu" class="md:hidden text-on-surface p-2 -mr-1 shrink-0" id="mobile-menu-btn"
+            type="button">
+            <span class="material-symbols-outlined text-[28px]" id="mobile-menu-icon">menu</span>
+        </button>
+    </header>
+    <div aria-hidden="true"
+        class="mobile-nav-overlay fixed inset-0 bg-black/50 z-[60] opacity-0 pointer-events-none transition-opacity duration-300"
+        id="mobile-nav-overlay"></div>
+    <nav aria-hidden="true"
+        class="mobile-nav-drawer fixed top-0 right-0 h-full w-[min(300px,88vw)] bg-white z-[70] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col"
+        id="mobile-nav-drawer">
+        <div class="flex items-center justify-between px-5 py-4 border-b border-outline-variant/40">
+            <span class="font-bold text-[#4b6544] uppercase tracking-[0.15em] text-xs">Menu</span>
+            <button aria-label="Close menu" class="p-1.5 text-on-surface rounded-lg hover:bg-surface-container"
+                id="mobile-menu-close" type="button">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col p-4 gap-0.5 flex-1 overflow-y-auto">
+            <a class="mobile-nav-link" href="index.html">Home</a>
+            <a class="mobile-nav-link" href="services.html">Services</a>
+            <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+            <a class="mobile-nav-link" href="about.html">About</a>
+            <a class="mobile-nav-link" href="contact.html">Contact</a>
+            <a class="mobile-nav-link" href="enquiry.html">Enquiry</a>
+        </div>
+        <div class="p-4 border-t border-outline-variant/40 bg-surface-container-low">
+            <a class="hero-btn-primary w-full text-center py-3.5 font-bold uppercase tracking-widest text-xs block rounded-xl"
+                href="enquiry.html">Enquire Now</a>
+            <a class="flex items-center justify-center gap-2 mt-4 py-2.5 text-sm text-on-surface-variant font-medium"
+                href="tel:+919994654830">
+                <span class="material-symbols-outlined text-[#4b6544] text-[18px]">call</span>
+                +91 99946 54830
+            </a>
+        </div>
+    </nav>
+    <!-- CONTACT HERO -->
+<section class="relative overflow-hidden bg-[#10200f] pt-28 pb-16 md:pt-40 md:pb-20">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 opacity-[0.08]"
+        style="background-image: linear-gradient(#8fd67a 1px, transparent 1px), linear-gradient(90deg, #8fd67a 1px, transparent 1px); background-size: 50px 50px;">
+    </div>
+
+    <div class="absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full bg-[#8fd67a]/10 blur-3xl"></div>
+    <div class="absolute -left-32 bottom-0 h-[300px] w-[300px] rounded-full bg-[#8fd67a]/5 blur-3xl"></div>
+
+    <div class="relative z-10 mx-auto max-w-[1440px] px-5 md:px-8">
+
+        <!-- Breadcrumb -->
+        <div class="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em]">
+            <a href="index.html"
+                class="text-white/50 transition-colors duration-300 hover:text-[#8fd67a]">
+                Home
+            </a>
+
+            <span class="text-white/30">/</span>
+
+            <span class="text-[#8fd67a]">
+                Contact
+            </span>
+        </div>
+
+        <!-- Heading -->
+        <div class="max-w-3xl">
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#8fd67a]">
+                Let's Connect
+            </p>
+
+            <h1 class="text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
+                Get in
+                <span class="text-[#8fd67a]">Touch</span>
+            </h1>
+
+            <p class="mt-5 max-w-2xl text-base leading-7 text-white/65 md:text-lg">
+                Reach us for quotes, plating requirements, plant visits,
+                or production support. Our team is ready to help.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="bg-[#f6f8f5] py-14 md:py-20">
+
+    <div class="mx-auto max-w-[1440px] px-5 md:px-8">
+
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
+
+            <!-- ========================================= -->
+            <!-- LEFT SIDE -->
+            <!-- ========================================= -->
+            <div class="lg:col-span-5">
+
+                <!-- Section heading -->
+                <div class="mb-8">
+                    <h4 class="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-[#739e67]">
+                        Contact Information
+                    </h4>
+
+                    <!-- <h2 class="text-3xl font-extrabold leading-tight text-[#172f14] md:text-4xl">
+                        Let's discuss your
+                        <span class="text-[#739e67]">
+                            requirements.
+                        </span>
+                    </h2>
+
+                    <p class="mt-4 max-w-lg text-sm leading-6 text-gray-600 md:text-base">
+                        Whether you need precision plating, surface finishing,
+                        production support, or a facility visit, our team is
+                        available to assist you.
+                    </p> -->
+                </div>
+
+
+                <!-- Contact Cards -->
+                <div class="space-y-4">
+
+                    <!-- Address -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=R.S+No.+210%2F3C+Pattanur+Village+Thiruchitrambalam+Panchayat+Vanur+Taluk+Villupuram+Tamil+Nadu+605111"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#8fd67a] hover:shadow-lg">
+
+                        <div
+                            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eaf4e7] text-[#4b6544] transition-colors duration-300 group-hover:bg-[#172f14] group-hover:text-[#8fd67a]">
+
+                            <span class="material-symbols-outlined">
+                                location_on
+                            </span>
+
+                        </div>
+
+                        <div>
+                            <p class="mb-1 text-sm font-bold text-[#172f14]">
+                                Address
+                            </p>
+
+                            <p class="text-sm leading-6 text-gray-600">
+                                R.S. No. 210/3C, Pattanur Village,
+                                Thiruchitrambalam Panchayat, Vanur Taluk,
+                                Villupuram District, Tamil Nadu - 605111
+                            </p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- Phone -->
+                    <div
+                        class="group flex gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#8fd67a] hover:shadow-lg">
+
+                        <div
+                            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eaf4e7] text-[#4b6544] transition-colors duration-300 group-hover:bg-[#172f14] group-hover:text-[#8fd67a]">
+
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+
+                        </div>
+
+                        <div>
+                            <p class="mb-1 text-sm font-bold text-[#172f14]">
+                                Phone
+                            </p>
+
+                            <div class="flex flex-col gap-1">
+
+                                <a href="tel:+919994654830"
+                                    class="text-sm text-gray-600 transition-colors hover:text-[#739e67]">
+                                    +91 99946 54830
+                                </a>
+
+                                <a href="tel:+917639081299"
+                                    class="text-sm text-gray-600 transition-colors hover:text-[#739e67]">
+                                    +91 76390 81299
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div
+                        class="group flex gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#8fd67a] hover:shadow-lg">
+
+                        <div
+                            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eaf4e7] text-[#4b6544] transition-colors duration-300 group-hover:bg-[#172f14] group-hover:text-[#8fd67a]">
+
+                            <span class="material-symbols-outlined">
+                                mail
+                            </span>
+
+                        </div>
+
+                        <div>
+                            <p class="mb-1 text-sm font-bold text-[#172f14]">
+                                Email
+                            </p>
+
+                            <div class="flex flex-col gap-1">
+
+                                <a href="mailto:Admin@ssmetalfinishers.com"
+                                    class="break-all text-sm text-gray-600 transition-colors hover:text-[#739e67]">
+                                    Admin@ssmetalfinishers.com
+                                </a>
+
+                                <a href="mailto:Info@ssmetalfinishers.com"
+                                    class="break-all text-sm text-gray-600 transition-colors hover:text-[#739e67]">
+                                    Info@ssmetalfinishers.com
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Working Hours -->
+                    <div
+                        class="flex gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+
+                        <div
+                            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eaf4e7] text-[#4b6544]">
+
+                            <span class="material-symbols-outlined">
+                                schedule
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <p class="mb-1 text-sm font-bold text-[#172f14]">
+                                Working Hours
+                            </p>
+
+                            <p class="text-sm text-gray-600">
+                                Monday – Saturday
+                            </p>
+
+                            <p class="mt-1 text-sm font-semibold text-[#739e67]">
+                                9:00 AM – 6:00 PM IST
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Map -->
+                <div class="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+
+                    <div class="flex items-center justify-between border-b border-gray-100 px-5 py-4">
+
+                        <div>
+                            <p class="text-sm font-bold text-[#172f14]">
+                                Find Our Facility
+                            </p>
+
+                            <p class="mt-1 text-xs text-gray-500">
+                                Pattanur, Villupuram, Tamil Nadu
+                            </p>
+                        </div>
+
+                        <span class="material-symbols-outlined text-[#739e67]">
+                            map
+                        </span>
+
+                    </div>
+
+                    <div class="h-[260px]">
+
+                        <iframe
+                            class="h-full w-full grayscale transition-all duration-500 hover:grayscale-0"
+                            style="border:0;"
+                            src="https://maps.google.com/maps?q=R.S.+No.+210%2F3C,+Pattanur+Village,+Thiruchitrambalam+Panchayat,+Vanur+Taluk,+Villupuram+District,+Tamil+Nadu+605111&z=15&output=embed"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="Sunshine Metal Finishers Pvt Ltd location map">
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GST -->
+                <div
+                    class="mt-4 flex items-center gap-4 rounded-2xl border border-[#d9e8d5] bg-[#eef7eb] p-5">
+
+                    <div
+                        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#739e67] shadow-sm">
+
+                        <span class="material-symbols-outlined">
+                            receipt_long
+                        </span>
+
+                    </div>
+
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-[#4b6544]">
+                            GST Number
+                        </p>
+
+                        <p class="mt-1 text-sm font-semibold text-[#172f14]">
+                            34AAPPV5722K2Z3
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- RIGHT SIDE - FORM -->
+            <!-- ========================================= -->
+            <div class="lg:col-span-7">
+
+                <div class="rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_15px_50px_rgba(23,47,20,0.08)] md:p-9">
+
+                    <!-- Form Header -->
+                    <div class="mb-8 border-b border-gray-100 pb-6">
+
+                        <p class="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-[#739e67]">
+                            Send an Enquiry
+                        </p>
+
+                        <h2 class="text-2xl font-extrabold text-[#172f14] md:text-3xl">
+                            Tell us what you need
+                        </h2>
+
+                        <p class="mt-2 text-sm leading-6 text-gray-500">
+                            Share your requirements and our team will get back
+                            to you as soon as possible.
+                        </p>
+
+                    </div>
+
+
+                    <form class="space-y-5">
+
+                        <!-- Full Name -->
+                        <div>
+                            <label
+                                class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="Enter your full name"
+                                class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"
+                            />
+                        </div>
+
+
+                        <!-- Mobile + Email -->
+                        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+
+                            <div>
+                                <label
+                                    class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
+                                    Mobile Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    placeholder="+91 XXXXX XXXXX"
+                                    class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"
+                                />
+                            </div>
+
+
+                            <div>
+                                <label
+                                    class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    placeholder="you@example.com"
+                                    class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"
+                                />
+                            </div>
+
+                        </div>
+
+
+                        <!-- Subject -->
+                        <div>
+                            <label
+                                class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="Quote request / Job work / Support"
+                                class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"
+                            />
+                        </div>
+
+
+                        <!-- Service -->
+                        <div>
+                            <label
+                                class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
+                                Service Required
+                            </label>
+
+                            <select
+                                class="w-full appearance-none rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-gray-600 outline-none transition-all duration-300 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10">
+
+                                <option value="">
+                                    Select a service
+                                </option>
+
+                                <option>
+                                    Zinc Nickel
+                                </option>
+
+                                <option>
+                                    Electroplating
+                                </option>
+
+                                <option>
+                                    Galvanising
+                                </option>
+
+                                <option>
+                                    Anodising
+                                </option>
+
+                                <option>
+                                    Cyanide Copper
+                                </option>
+
+                                <option>
+                                    Other Requirement
+                                </option>
+
+                            </select>
+                        </div>
+
+
+                        <!-- Message -->
+                        <div>
+                            <label
+                                class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
+                                Message
+                            </label>
+
+                            <textarea
+                                rows="5"
+                                placeholder="Tell us about your material, quantity, finish, timeline or other requirements..."
+                                class="w-full resize-none rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm leading-6 text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"></textarea>
+                        </div>
+
+
+                        <!-- Submit -->
+                        <button
+                            type="submit"
+                            class="group flex w-full items-center justify-center gap-3 rounded-xl bg-[#172f14] px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-[#172f14]/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#244a1f] hover:shadow-xl">
+
+                            Send Message
+
+                            <span
+                                class="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-x-1">
+                                arrow_forward
+                            </span>
+
+                        </button>
+
+
+                        <!-- Note -->
+                        <div class="flex items-start gap-2 pt-1">
+
+                            <span class="material-symbols-outlined mt-0.5 text-[16px] text-[#739e67]">
+                                schedule
+                            </span>
+
+                            <p class="text-xs leading-5 text-gray-500">
+                                Typical response time:
+                                <span class="font-semibold text-gray-700">
+                                    24–48 business hours.
+                                </span>
+
+                                For detailed quotes, use our
+                                <a href="enquiry.html"
+                                    class="font-bold text-[#739e67] hover:text-[#4b6544]">
+                                    Enquiry Form
+                                </a>.
+                            </p>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- Footer -->
+    <footer
+        class="footer relative overflow-hidden py-4 md:py-4 px-margin-mobile md:px-margin-desktop px-margin-desktop">
+
+        <!-- Decorative Glow -->
+        <div class="footer-glow footer-glow-one"></div>
+        <div class="footer-glow footer-glow-two"></div>
+
+        <div class="container mx-auto relative z-10">
+
+            <!-- TOP FOOTER -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-10">
+
+                <!-- COMPANY -->
+                <div class="lg:col-span-4">
+
+                    <div class="flex items-center gap-3 mb-6">
+
+                        <div class="footer-logo-icon">
+                            <span class="material-symbols-outlined text-tertiary text-3xl">
+                                precision_manufacturing
+                            </span>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-extrabold uppercase tracking-tight text-lg">
+                                Sunshine Metal Finishers
+                            </h3>
+
+                            <p class="text-tertiary text-[10px] font-bold uppercase tracking-[0.25em] mt-1">
+                                Pvt. Ltd.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <p class="text-white/55 leading-relaxed text-sm max-w-md">
+                        Delivering precision-driven surface finishing and
+                        sub-assembly solutions for demanding industrial
+                        applications. Built on quality, consistency and
+                        engineering excellence.
+                    </p>
+
+
+                    <!-- TRUST BADGES -->
+                    <div class="flex flex-wrap gap-3 mt-7">
+
+                        <span class="footer-badge">
+                            <span class="material-symbols-outlined">verified</span>
+                            Quality Driven
+                        </span>
+
+                        <span class="footer-badge">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            Precision Engineering
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+                <div class="lg:col-span-2">
+
+                    <h5 class="footer-heading">
+                        Quick Links
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="index.html">
+                                <span>Home</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">
+                                <span>About Us</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">
+                                <span>Services</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="gallery.html">
+                                <span>Gallery</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="enquiry.html">
+                                <span>Enquiry</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICES -->
+                <div class="lg:col-span-2">
+
+                    <h5 class="footer-heading">
+                        Capabilities
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="services.html">
+                                <span>Electroplating</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">
+                                <span>Galvanising</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">
+                                <span>Anodising</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">
+                                <span>Sub Assembly</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">
+                                <span>Surface Finishing</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONTACT -->
+                <div class="lg:col-span-4">
+
+                    <h5 class="footer-heading">
+                        Get In Touch
+                    </h5>
+
+                    <div class="space-y-5">
+
+                        <!-- ADDRESS -->
+                        <div class="footer-contact">
+
+                            <div class="footer-contact-icon">
+                                <span class="material-symbols-outlined">
+                                    location_on
+                                </span>
+                            </div>
+
+                            <div>
+                                <p class="footer-contact-label">
+                                    Our Facility
+                                </p>
+
+                                <p class="footer-contact-text">
+                                    Industrial Estate, Tamil Nadu, India
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <!-- PHONE -->
+                        <div class="footer-contact">
+
+                            <div class="footer-contact-icon">
+                                <span class="material-symbols-outlined">
+                                    call
+                                </span>
+                            </div>
+
+                            <div>
+                                <p class="footer-contact-label">
+                                    Phone
+                                </p>
+
+                                <a href="tel:+910000000000" class="footer-contact-text hover:text-tertiary">
+                                    +91 00000 00000
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="footer-contact">
+
+                            <div class="footer-contact-icon">
+                                <span class="material-symbols-outlined">
+                                    mail
+                                </span>
+                            </div>
+
+                            <div>
+                                <p class="footer-contact-label">
+                                    Email
+                                </p>
+
+                                <a href="mailto:info@sunshinemetalfinishers.com"
+                                    class="footer-contact-text hover:text-tertiary">
+                                    info@sunshinemetalfinishers.com
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWSLETTER / CTA -->
+            <div class="footer-newsletter mt-14 md:mt-16">
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                    <div>
+
+                        <div class="flex items-center gap-2 mb-3">
+
+                            <span class="material-symbols-outlined text-tertiary">
+                                campaign
+                            </span>
+
+                            <span class="text-tertiary text-xs font-bold uppercase tracking-[0.2em]">
+                                Stay Connected
+                            </span>
+
+                        </div>
+
+                        <h3 class="text-white text-xl md:text-2xl font-bold">
+                            Stay updated with our latest capabilities.
+                        </h3>
+
+                        <p class="text-white/45 text-sm mt-2 max-w-lg">
+                            Get occasional updates about our surface finishing
+                            technologies, industrial capabilities and company news.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="flex flex-col sm:flex-row gap-3">
+
+                            <input type="email" placeholder="Enter your email address" class="footer-input">
+
+                            <button class="footer-submit-btn">
+                                Subscribe
+                                <span class="material-symbols-outlined text-lg">
+                                    arrow_forward
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM BAR -->
+            <div class="mt-10 pt-7 border-t border-white/10">
+
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-5">
+
+                    <p class="text-white/40 text-xs text-center lg:text-left">
+                        © 2026
+                        <span class="text-white/65">
+                            Sunshine Metal Finishers Pvt Ltd.
+                        </span>
+                        All Rights Reserved.
+                    </p>
+
+
+                    <div class="flex flex-wrap justify-center gap-x-7 gap-y-3">
+
+                        <a href="#" class="footer-bottom-link">
+                            Privacy Policy
+                        </a>
+
+                        <a href="#" class="footer-bottom-link">
+                            Terms of Service
+                        </a>
+
+                        <a href="#" class="footer-bottom-link">
+                            Compliance
+                        </a>
+
+                    </div>
+
+
+                    <!-- SOCIAL -->
+                    <div class="flex items-center gap-2">
+
+                        <a href="#" aria-label="LinkedIn" class="footer-social">
+                            <span class="material-symbols-outlined text-lg">
+                                business_center
+                            </span>
+                        </a>
+
+                        <a href="#" aria-label="Email" class="footer-social">
+                            <span class="material-symbols-outlined text-lg">
+                                mail
+                            </span>
+                        </a>
+
+                        <a href="#" aria-label="Contact" class="footer-social">
+                            <span class="material-symbols-outlined text-lg">
+                                call
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <style>
+        .footer {
+            background:
+                radial-gradient(circle at 10% 20%,
+                    rgba(143, 214, 122, 0.07),
+                    transparent 30%),
+                radial-gradient(circle at 90% 80%,
+                    rgba(143, 214, 122, 0.04),
+                    transparent 30%),
+                #071007;
+
+            border-top: 1px solid rgba(143, 214, 122, 0.12);
+        }
+
+
+        /* DECORATIVE GLOW */
+
+        .footer-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(143, 214, 122, 0.035);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .footer-glow-one {
+            top: -150px;
+            left: -100px;
+        }
+
+        .footer-glow-two {
+            bottom: -150px;
+            right: -100px;
+        }
+
+
+        /* LOGO */
+
+        .footer-logo-icon {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(143, 214, 122, 0.25);
+            background: rgba(143, 214, 122, 0.05);
+
+            border-radius: 10px;
+        }
+
+
+        /* HEADINGS */
+
+        .footer-heading {
+            color: #8fd67a;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* LINKS */
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .footer-links li a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            color: rgba(255, 255, 255, 0.48);
+
+            font-size: 13px;
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .footer-links li a .material-symbols-outlined {
+            font-size: 16px;
+
+            opacity: 0;
+
+            transform: translateX(-5px);
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .footer-links li a:hover {
+            color: #8fd67a;
+            transform: translateX(3px);
+        }
+
+        .footer-links li a:hover .material-symbols-outlined {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        /* BADGES */
+
+        .footer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 7px 10px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.025);
+
+            border-radius: 6px;
+
+            color: rgba(255, 255, 255, 0.45);
+
+            font-size: 9px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-badge .material-symbols-outlined {
+            color: #8fd67a;
+            font-size: 15px;
+        }
+
+
+        /* CONTACT */
+
+        .footer-contact {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+        }
+
+        .footer-contact-icon {
+            min-width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(143, 214, 122, 0.15);
+            background: rgba(143, 214, 122, 0.04);
+
+            border-radius: 7px;
+        }
+
+        .footer-contact-icon .material-symbols-outlined {
+            color: #8fd67a;
+            font-size: 19px;
+        }
+
+        .footer-contact-label {
+            color: rgba(255, 255, 255, 0.35);
+
+            font-size: 9px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+
+            margin-bottom: 3px;
+        }
+
+        .footer-contact-text {
+            color: rgba(255, 255, 255, 0.6);
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+            transition: color 0.2s ease;
+        }
+
+
+        /* NEWSLETTER */
+
+        .footer-newsletter {
+            position: relative;
+
+            padding: 28px 30px;
+
+            border: 1px solid rgba(143, 214, 122, 0.13);
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(143, 214, 122, 0.06),
+                    rgba(255, 255, 255, 0.015));
+        }
+
+        .footer-input {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            border-radius: 7px;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            color: white;
+
+            outline: none;
+
+            font-size: 13px;
+
+            transition:
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .footer-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-input:focus {
+            border-color: rgba(143, 214, 122, 0.5);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+
+        .footer-submit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 0 22px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #8fd67a;
+            color: #071007;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .footer-submit-btn:hover {
+            background: #b5f3a3;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 25px rgba(143, 214, 122, 0.18);
+        }
+
+
+        /* BOTTOM LINKS */
+
+        .footer-bottom-link {
+            color: rgba(255, 255, 255, 0.38);
+
+            font-size: 11px;
+
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom-link:hover {
+            color: #8fd67a;
+        }
+
+
+        /* SOCIAL */
+
+        .footer-social {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(255, 255, 255, 0.09);
+
+            border-radius: 7px;
+
+            color: rgba(255, 255, 255, 0.45);
+
+            transition:
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .footer-social:hover {
+            color: #8fd67a;
+
+            border-color: rgba(143, 214, 122, 0.4);
+
+            background: rgba(143, 214, 122, 0.06);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 640px) {
+
+            .footer-newsletter {
+                padding: 22px;
+            }
+
+            .footer-submit-btn {
+                min-height: 48px;
+            }
+
+            .footer-logo-icon {
+                width: 46px;
+                height: 46px;
+            }
+
+        }
+    </style>
+
+
+    <!-- =====================================================
+     WHATSAPP FLOAT
+===================================================== -->
+
+    <a aria-label="Chat on WhatsApp" class="whatsapp-float" href="https://wa.me/919994654830" target="_blank"
+        rel="noopener noreferrer">
+
+        <svg viewBox="0 0 24 24">
+
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.05-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+
+        </svg>
+
+    </a>
+
+    <script>
+            (function initMobileNav() {
+                const btn = document.getElementById('mobile-menu-btn');
+                const closeBtn = document.getElementById('mobile-menu-close');
+                const drawer = document.getElementById('mobile-nav-drawer');
+                const overlay = document.getElementById('mobile-nav-overlay');
+                if (!btn || !drawer || !overlay) return;
+                const current = window.location.pathname.split('/').pop() || 'index.html';
+                drawer.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    if (link.getAttribute('href') === current) link.classList.add('mobile-nav-link-active');
+                });
+                function setOpen(open) {
+                    drawer.classList.toggle('translate-x-full', !open);
+                    overlay.classList.toggle('opacity-0', !open);
+                    overlay.classList.toggle('pointer-events-none', !open);
+                    overlay.classList.toggle('opacity-100', open);
+                    document.body.classList.toggle('menu-open', open);
+                    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+                    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+                }
+                btn.addEventListener('click', () => setOpen(drawer.classList.contains('translate-x-full')));
+                closeBtn?.addEventListener('click', () => setOpen(false));
+                overlay.addEventListener('click', () => setOpen(false));
+                drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+            })();
+    </script>
+</body>
+
+</html>
+>>>>>>> 5f4359d (Design update)
