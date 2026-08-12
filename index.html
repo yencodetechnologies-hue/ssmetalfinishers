@@ -1421,6 +1421,99 @@
         /* =========================================================
            MOBILE
         ========================================================= */
+          .mobile-nav-link {
+            display: block;
+            padding: 0.875rem 1rem;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #434840;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .mobile-nav-link-active {
+            background: rgba(143, 214, 122, 0.14);
+            color: #4b6544;
+            font-weight: 700;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 767px) {
+            .hero-overlay {
+                background: linear-gradient(180deg, rgba(12, 20, 10, 0.85) 0%, rgba(12, 20, 10, 0.94) 100%);
+            }
+
+            .hero-stats-bar>.hero-stat-item:nth-child(odd) {
+                border-right: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .hero-stats-bar>.hero-stat-item:nth-child(-n+4) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .hero-stat-icon {
+                width: 34px;
+                height: 34px;
+            }
+
+            .hero-slide-in {
+                animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+            }
+
+            .page-hero {
+                padding-top: 6.5rem !important;
+            }
+
+            .mobile-stat-number {
+                font-size: 2.25rem !important;
+                line-height: 2.5rem !important;
+            }
+
+            .contact-grid {
+                gap: 2.5rem !important;
+            }
+        }
+
+        .service-card {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(23, 47, 20, 0.12);
+        }
+
+        .service-icon-chip {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            background: rgba(143, 214, 122, 0.14);
+            border: 1px solid rgba(143, 214, 122, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-chip {
+            background: rgba(143, 214, 122, 0.24);
+            border-color: rgba(143, 214, 122, 0.5);
+        }
+
+        .service-learn-link {
+            transition: gap 0.3s ease;
+        }
+
+        .service-learn-link .material-symbols-outlined {
+            transition: transform 0.3s ease;
+        }
+
+        .service-learn-link:hover .material-symbols-outlined {
+            transform: translateX(4px);
+        }
 
         @media (max-width: 767px) {
 
@@ -1598,6 +1691,38 @@
             <span class="material-symbols-outlined text-[28px]" id="mobile-menu-icon">menu</span>
         </button>
     </header>
+
+    <div aria-hidden="true"
+        class="mobile-nav-overlay fixed inset-0 bg-black/50 z-[60] opacity-0 pointer-events-none transition-opacity duration-300"
+        id="mobile-nav-overlay"></div>
+    <nav aria-hidden="true"
+        class="mobile-nav-drawer fixed top-0 right-0 h-full w-[min(300px,88vw)] bg-white z-[70] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col"
+        id="mobile-nav-drawer">
+        <div class="flex items-center justify-between px-5 py-4 border-b border-outline-variant/40">
+            <span class="font-bold text-[#4b6544] uppercase tracking-[0.15em] text-xs">Menu</span>
+            <button aria-label="Close menu" class="p-1.5 text-on-surface rounded-lg hover:bg-surface-container"
+                id="mobile-menu-close" type="button">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col p-4 gap-0.5 flex-1 overflow-y-auto">
+            <a class="mobile-nav-link" href="index.html">Home</a>
+            <a class="mobile-nav-link" href="services.html">Services</a>
+            <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+            <a class="mobile-nav-link" href="about.html">About</a>
+            <a class="mobile-nav-link" href="contact.html">Contact</a>
+            <a class="mobile-nav-link" href="enquiry.html">Enquiry</a>
+        </div>
+        <div class="p-4 border-t border-outline-variant/40 bg-surface-container-low">
+            <a class="hero-btn-primary w-full text-center py-3.5 font-bold uppercase tracking-widest text-xs block rounded-xl"
+                href="enquiry.html">Enquire Now</a>
+            <a class="flex items-center justify-center gap-2 mt-4 py-2.5 text-sm text-on-surface-variant font-medium"
+                href="tel:+919994654830">
+                <span class="material-symbols-outlined text-[#4b6544] text-[18px]">call</span>
+                +91 99946 54830
+            </a>
+        </div>
+    </nav>
 
     <!-- =========================================================
          HERO
@@ -3472,6 +3597,35 @@
 
     <script>
 
+         (function initMobileNav() {
+                const btn = document.getElementById('mobile-menu-btn');
+                const closeBtn = document.getElementById('mobile-menu-close');
+                const drawer = document.getElementById('mobile-nav-drawer');
+                const overlay = document.getElementById('mobile-nav-overlay');
+                if (!btn || !drawer || !overlay) return;
+
+                const current = window.location.pathname.split('/').pop() || 'index.html';
+                drawer.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    if (link.getAttribute('href') === current) link.classList.add('mobile-nav-link-active');
+                });
+
+                function setOpen(open) {
+                    drawer.classList.toggle('translate-x-full', !open);
+                    overlay.classList.toggle('opacity-0', !open);
+                    overlay.classList.toggle('pointer-events-none', !open);
+                    overlay.classList.toggle('opacity-100', open);
+                    document.body.classList.toggle('menu-open', open);
+                    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+                    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+                }
+
+                btn.addEventListener('click', () => setOpen(drawer.classList.contains('translate-x-full')));
+                closeBtn?.addEventListener('click', () => setOpen(false));
+                overlay.addEventListener('click', () => setOpen(false));
+                drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+            })();
+
+
             /* =====================================================
                HERO SLIDER
             ===================================================== */
@@ -3914,8 +4068,14 @@
 
             });
 
+            
+
     </script>
 
+    
+
 </body>
+
+
 
 </html>
