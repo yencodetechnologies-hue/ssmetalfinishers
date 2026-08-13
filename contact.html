@@ -918,17 +918,21 @@
                     </div>
 
 
-                    <form class="space-y-5">
+                    <form id="contact-form" class="space-y-5">
 
                         <!-- Full Name -->
                         <div>
                             <label
+                                for="fullName"
                                 class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
                                 Full Name
                             </label>
 
                             <input
+                                id="fullName"
+                                name="fullName"
                                 type="text"
+                                required
                                 placeholder="Enter your full name"
                                 class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"
                             />
@@ -940,12 +944,16 @@
 
                             <div>
                                 <label
+                                    for="mobile"
                                     class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
                                     Mobile Number
                                 </label>
 
                                 <input
+                                    id="mobile"
+                                    name="mobile"
                                     type="tel"
+                                    required
                                     placeholder="+91 XXXXX XXXXX"
                                     class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"
                                 />
@@ -954,12 +962,16 @@
 
                             <div>
                                 <label
+                                    for="email"
                                     class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
                                     Email Address
                                 </label>
 
                                 <input
+                                    id="email"
+                                    name="email"
                                     type="email"
+                                    required
                                     placeholder="you@example.com"
                                     class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"
                                 />
@@ -971,11 +983,14 @@
                         <!-- Subject -->
                         <div>
                             <label
+                                for="subject"
                                 class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
                                 Subject
                             </label>
 
                             <input
+                                id="subject"
+                                name="subject"
                                 type="text"
                                 placeholder="Quote request / Job work / Support"
                                 class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"
@@ -986,11 +1001,14 @@
                         <!-- Service -->
                         <div>
                             <label
+                                for="service"
                                 class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
                                 Service Required
                             </label>
 
                             <select
+                                id="service"
+                                name="service"
                                 class="w-full appearance-none rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm text-gray-600 outline-none transition-all duration-300 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10">
 
                                 <option value="">
@@ -1028,11 +1046,15 @@
                         <!-- Message -->
                         <div>
                             <label
+                                for="message"
                                 class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
                                 Message
                             </label>
 
                             <textarea
+                                id="message"
+                                name="message"
+                                required
                                 rows="5"
                                 placeholder="Tell us about your material, quantity, finish, timeline or other requirements..."
                                 class="w-full resize-none rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm leading-6 text-[#172f14] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#8fd67a] focus:bg-white focus:ring-4 focus:ring-[#8fd67a]/10"></textarea>
@@ -1840,6 +1862,7 @@
                 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
             })();
     </script>
+    <script type="module" src="assets/js/form-submit.js" data-form-type="contact"></script>
 </body>
 
 </html>

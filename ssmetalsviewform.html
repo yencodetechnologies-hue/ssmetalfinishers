@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Form Submissions | Sunshine Metal Finishers</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #f6f8f5;
+            color: #172f14;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+
+    <!-- Passcode Gate -->
+    <div id="passcode-gate" class="flex min-h-screen items-center justify-center px-4">
+        <div class="w-full max-w-md rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+            <p class="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#739e67]">Admin Access</p>
+            <h1 class="mb-2 text-2xl font-extrabold text-[#172f14]">Form Submissions</h1>
+            <p class="mb-6 text-sm text-gray-500">Enter passcode to view contact and enquiry submissions.</p>
+
+            <form id="passcode-form" class="space-y-4">
+                <div>
+                    <label for="passcode-input" class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">
+                        Passcode
+                    </label>
+                    <input
+                        id="passcode-input"
+                        type="password"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        required
+                        placeholder="Enter passcode"
+                        class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3.5 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10"
+                    />
+                </div>
+                <p id="passcode-error" class="hidden text-sm font-medium text-red-600">Incorrect passcode. Please try again.</p>
+                <button
+                    type="submit"
+                    class="w-full rounded-xl bg-[#172f14] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#244a1f]">
+                    Unlock
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="hidden">
+        <header class="border-b border-gray-200 bg-white">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 md:px-6">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#739e67]">Sunshine Metal Finishers</p>
+                    <h1 class="text-xl font-extrabold text-[#172f14] md:text-2xl">Form Submissions</h1>
+                </div>
+                <div class="flex gap-2">
+                    <button id="refresh-btn" type="button"
+                        class="rounded-xl border border-gray-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#4b6544] hover:bg-[#fafcf9]">
+                        Refresh
+                    </button>
+                    <button id="logout-btn" type="button"
+                        class="rounded-xl bg-[#172f14] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white hover:bg-[#244a1f]">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="mx-auto max-w-7xl px-4 py-8 md:px-6">
+            <div id="loading-state" class="rounded-xl border border-gray-200 bg-white px-6 py-12 text-center text-sm text-gray-500">
+                Loading submissions...
+            </div>
+
+            <div id="empty-state" class="hidden rounded-xl border border-gray-200 bg-white px-6 py-12 text-center">
+                <p class="text-sm font-medium text-gray-600">No submissions yet.</p>
+                <p class="mt-1 text-xs text-gray-400">Submissions from Contact and Enquiry forms will appear here.</p>
+            </div>
+
+            <div id="table-wrapper" class="hidden overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[800px] text-left">
+                        <thead class="border-b border-gray-200 bg-[#fafcf9]">
+                            <tr>
+                                <th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#4b6544]">S.No</th>
+                                <th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#4b6544]">Type</th>
+                                <th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#4b6544]">Name</th>
+                                <th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#4b6544]">Mobile</th>
+                                <th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#4b6544]">Email</th>
+                                <th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#4b6544]">Date</th>
+                                <th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#4b6544]">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="submissions-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/50 px-4">
+        <div class="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl md:p-8">
+            <h2 class="mb-6 text-xl font-extrabold text-[#172f14]">Edit Submission</h2>
+
+            <form id="edit-form" class="space-y-4">
+                <div>
+                    <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Form Type</label>
+                    <select name="formType"
+                        class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10">
+                        <option value="contact">Contact</option>
+                        <option value="enquiry">Enquiry</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div>
+                        <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Full Name</label>
+                        <input name="fullName" type="text" required
+                            class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                    </div>
+                    <div>
+                        <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Mobile</label>
+                        <input name="mobile" type="tel" required
+                            class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                    </div>
+                </div>
+
+                <div>
+                    <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Email</label>
+                    <input name="email" type="email" required
+                        class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                </div>
+
+                <div>
+                    <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Service</label>
+                    <input name="service" type="text"
+                        class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                </div>
+
+                <div id="contact-fields" class="space-y-4">
+                    <div>
+                        <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Subject</label>
+                        <input name="subject" type="text"
+                            class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                    </div>
+                    <div>
+                        <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Message</label>
+                        <textarea name="message" rows="4"
+                            class="w-full resize-none rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10"></textarea>
+                    </div>
+                </div>
+
+                <div id="enquiry-fields" class="hidden space-y-4">
+                    <div>
+                        <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Company Name</label>
+                        <input name="companyName" type="text"
+                            class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                    </div>
+                    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                        <div>
+                            <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Substrate Material</label>
+                            <input name="substrateMaterial" type="text"
+                                class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                        </div>
+                        <div>
+                            <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Estimated Quantity</label>
+                            <input name="estimatedQuantity" type="text"
+                                class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Required By</label>
+                        <input name="requiredBy" type="date"
+                            class="w-full rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10" />
+                    </div>
+                    <div>
+                        <label class="mb-1 block text-xs font-bold uppercase tracking-wider text-[#4b6544]">Project Details</label>
+                        <textarea name="projectDetails" rows="4"
+                            class="w-full resize-none rounded-xl border border-gray-200 bg-[#fafcf9] px-4 py-3 text-sm outline-none focus:border-[#8fd67a] focus:ring-4 focus:ring-[#8fd67a]/10"></textarea>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 pt-2">
+                    <button type="submit"
+                        class="flex-1 rounded-xl bg-[#172f14] px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-[#244a1f]">
+                        Save Changes
+                    </button>
+                    <button id="edit-cancel-btn" type="button"
+                        class="rounded-xl border border-gray-200 bg-white px-6 py-3 text-xs font-bold uppercase tracking-wide text-gray-600 hover:bg-gray-50">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/admin-forms.js"></script>
+</body>
+
+</html>

@@ -874,7 +874,7 @@
 
 
                     <!-- Form body -->
-                    <form class="flex flex-col gap-5 p-6 md:p-8">
+                    <form id="enquiry-form" class="flex flex-col gap-5 p-6 md:p-8">
 
                         <!-- Name / Company -->
                         <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -882,11 +882,14 @@
                             <div class="flex flex-col gap-2">
 
                                 <label
+                                    for="fullName"
                                     class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                     Full Name *
                                 </label>
 
                                 <input
+                                    id="fullName"
+                                    name="fullName"
                                     class="w-full rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm text-on-surface outline-none transition-all placeholder:text-on-surface-variant/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary/10"
                                     placeholder="John Doe"
                                     type="text"
@@ -898,11 +901,14 @@
                             <div class="flex flex-col gap-2">
 
                                 <label
+                                    for="companyName"
                                     class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                     Company Name
                                 </label>
 
                                 <input
+                                    id="companyName"
+                                    name="companyName"
                                     class="w-full rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm text-on-surface outline-none transition-all placeholder:text-on-surface-variant/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary/10"
                                     placeholder="Your Company Pvt. Ltd."
                                     type="text" />
@@ -918,11 +924,14 @@
                             <div class="flex flex-col gap-2">
 
                                 <label
+                                    for="mobile"
                                     class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                     Mobile Number *
                                 </label>
 
                                 <input
+                                    id="mobile"
+                                    name="mobile"
                                     class="w-full rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm text-on-surface outline-none transition-all placeholder:text-on-surface-variant/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary/10"
                                     placeholder="+91 XXXXX XXXXX"
                                     type="tel"
@@ -934,11 +943,14 @@
                             <div class="flex flex-col gap-2">
 
                                 <label
+                                    for="email"
                                     class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                     Email *
                                 </label>
 
                                 <input
+                                    id="email"
+                                    name="email"
                                     class="w-full rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm text-on-surface outline-none transition-all placeholder:text-on-surface-variant/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary/10"
                                     placeholder="you@example.com"
                                     type="email"
@@ -955,11 +967,14 @@
                             <div class="flex flex-col gap-2">
 
                                 <label
+                                    for="service"
                                     class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                     Service Required
                                 </label>
 
                                 <select
+                                    id="service"
+                                    name="service"
                                     class="w-full appearance-none rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm text-on-surface outline-none transition-all focus:border-tertiary focus:ring-2 focus:ring-tertiary/10">
 
                                     <option>Zinc Nickel Plating</option>
@@ -977,11 +992,14 @@
                             <div class="flex flex-col gap-2">
 
                                 <label
+                                    for="substrateMaterial"
                                     class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                     Substrate Material
                                 </label>
 
                                 <input
+                                    id="substrateMaterial"
+                                    name="substrateMaterial"
                                     class="w-full rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm text-on-surface outline-none transition-all placeholder:text-on-surface-variant/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary/10"
                                     placeholder="Mild steel, Aluminium 6061"
                                     type="text" />
@@ -997,11 +1015,14 @@
                             <div class="flex flex-col gap-2">
 
                                 <label
+                                    for="estimatedQuantity"
                                     class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                     Estimated Quantity
                                 </label>
 
                                 <input
+                                    id="estimatedQuantity"
+                                    name="estimatedQuantity"
                                     class="w-full rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm text-on-surface outline-none transition-all placeholder:text-on-surface-variant/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary/10"
                                     placeholder="5,000 units / month"
                                     type="text" />
@@ -1012,11 +1033,14 @@
                             <div class="flex flex-col gap-2">
 
                                 <label
+                                    for="requiredBy"
                                     class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                     Required By
                                 </label>
 
                                 <input
+                                    id="requiredBy"
+                                    name="requiredBy"
                                     class="w-full rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm text-on-surface outline-none transition-all focus:border-tertiary focus:ring-2 focus:ring-tertiary/10"
                                     type="date" />
 
@@ -1029,11 +1053,14 @@
                         <div class="flex flex-col gap-2">
 
                             <label
+                                for="projectDetails"
                                 class="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
                                 Project Details
                             </label>
 
                             <textarea
+                                id="projectDetails"
+                                name="projectDetails"
                                 class="min-h-[130px] w-full resize-none rounded-xl border border-outline-variant/50 bg-surface-container-low px-4 py-3.5 text-sm leading-6 text-on-surface outline-none transition-all placeholder:text-on-surface-variant/50 focus:border-tertiary focus:ring-2 focus:ring-tertiary/10"
                                 placeholder="Tolerances, applicable standards (ASTM/MIL/OEM spec), part drawings reference, quantity, finish requirements, and any other details..."
                                 rows="5"></textarea>
@@ -1835,6 +1862,7 @@
                 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
             })();
     </script>
+    <script type="module" src="assets/js/form-submit.js" data-form-type="enquiry"></script>
 </body>
 
 </html>
