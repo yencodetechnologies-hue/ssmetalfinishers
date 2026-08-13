@@ -32,8 +32,16 @@ const editCancelBtn = document.getElementById("edit-cancel-btn");
 const contactFields = document.getElementById("contact-fields");
 const enquiryFields = document.getElementById("enquiry-fields");
 
+const viewModal = document.getElementById("view-modal");
+const viewDetails = document.getElementById("view-details");
+const viewFormTypeLabel = document.getElementById("view-form-type-label");
+const viewCloseBtn = document.getElementById("view-close-btn");
+const viewCloseBottomBtn = document.getElementById("view-close-bottom-btn");
+const viewEditBtn = document.getElementById("view-edit-btn");
+
 let submissions = [];
 let editingId = null;
+let viewingId = null;
 
 function isAuthenticated() {
   return sessionStorage.getItem(AUTH_KEY) === "true";
@@ -65,6 +73,23 @@ function formatDate(timestamp) {
 
 function formatType(formType) {
   return formType === "enquiry" ? "Enquiry" : "Contact";
+}
+
+function displayValue(value) {
+  const text = (value || "").toString().trim();
+  return text ? escapeHtml(text) : '<span class="text-gray-400">—</span>';
+}
+
+function renderDetailRow(label, value, fullWidth = false) {
+  return `
+    <div class="${fullWidth ? "col-span-full" : ""}">
+      <p class="mb-1 text-xs font-bold uppercase tracking-wider text-[#4b6544]">${label}</p>
+      <p class="rounded-xl border border-gray-100 bg-[#fafcf9] px-4 py-3 text-sm leading-6 text-[#172f14]">${displayValue(value)}</p>
+    </div>`;
+}
+
+function setModalOpen(isOpen) {
+  document.body.classList.toggle("overflow-hidden", isOpen);
 }
 
 async function loadSubmissions() {
@@ -107,6 +132,10 @@ async function loadSubmissions() {
           <td class="px-4 py-3 text-sm text-gray-500 whitespace-nowrap">${formatDate(item.createdAt)}</td>
           <td class="px-4 py-3">
             <div class="flex gap-2">
+              <button type="button" data-action="view" data-id="${item.id}" title="View details" aria-label="View details"
+                class="view-btn flex h-8 w-8 items-center justify-center rounded-lg border border-[#739e67]/30 bg-[#739e67]/10 text-[#4b6544] hover:bg-[#739e67] hover:text-white">
+                <span class="material-symbols-outlined text-[18px]">visibility</span>
+              </button>
               <button type="button" data-action="edit" data-id="${item.id}" class="edit-btn rounded-lg bg-[#739e67] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white hover:bg-[#4b6544]">Edit</button>
               <button type="button" data-action="delete" data-id="${item.id}" class="delete-btn rounded-lg bg-red-600 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white hover:bg-red-700">Delete</button>
             </div>
@@ -136,10 +165,66 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;");
 }
 
+function openViewModal(id) {
+  const item = submissions.find((s) => s.id === id);
+  if (!item) return;
+
+  viewingId = id;
+  viewFormTypeLabel.textContent = `${formatType(item.formType)} Form Submission`;
+
+  const commonFields = [
+    renderDetailRow("Full Name", item.fullName),
+    renderDetailRow("Mobile Number", item.mobile),
+    renderDetailRow("Email Address", item.email),
+    renderDetailRow("Service Required", item.service)
+  ];
+
+  const contactFieldsHtml =
+    item.formType === "contact"
+      ? [
+          renderDetailRow("Subject", item.subject),
+          renderDetailRow("Message", item.message, true)
+        ]
+      : [];
+
+  const enquiryFieldsHtml =
+    item.formType === "enquiry"
+      ? [
+          renderDetailRow("Company Name", item.companyName),
+          renderDetailRow("Substrate Material", item.substrateMaterial),
+          renderDetailRow("Estimated Quantity", item.estimatedQuantity),
+          renderDetailRow("Required By", item.requiredBy),
+          renderDetailRow("Project Details", item.projectDetails, true)
+        ]
+      : [];
+
+  viewDetails.innerHTML = `
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      ${renderDetailRow("Form Type", formatType(item.formType))}
+      ${renderDetailRow("Submitted On", formatDate(item.createdAt))}
+      ${renderDetailRow("Last Updated", formatDate(item.updatedAt))}
+      ${commonFields.join("")}
+      ${contactFieldsHtml.join("")}
+      ${enquiryFieldsHtml.join("")}
+    </div>`;
+
+  viewModal?.classList.remove("hidden");
+  setModalOpen(true);
+}
+
+function closeViewModal() {
+  viewingId = null;
+  viewModal?.classList.add("hidden");
+  if (editModal?.classList.contains("hidden")) {
+    setModalOpen(false);
+  }
+}
+
 function openEditModal(id) {
   const item = submissions.find((s) => s.id === id);
   if (!item) return;
 
+  closeViewModal();
   editingId = id;
   editForm.elements.formType.value = item.formType || "contact";
   editForm.elements.fullName.value = item.fullName || "";
@@ -156,13 +241,15 @@ function openEditModal(id) {
 
   toggleFieldGroups(item.formType);
   editModal?.classList.remove("hidden");
-  document.body.classList.add("overflow-hidden");
+  setModalOpen(true);
 }
 
 function closeEditModal() {
   editingId = null;
   editModal?.classList.add("hidden");
-  document.body.classList.remove("overflow-hidden");
+  if (viewModal?.classList.contains("hidden")) {
+    setModalOpen(false);
+  }
 }
 
 function toggleFieldGroups(formType) {
@@ -263,8 +350,18 @@ submissionsBody?.addEventListener("click", (e) => {
   const btn = e.target.closest("[data-action]");
   if (!btn) return;
   const { action, id } = btn.dataset;
+  if (action === "view") openViewModal(id);
   if (action === "edit") openEditModal(id);
   if (action === "delete") deleteSubmission(id);
+});
+
+viewCloseBtn?.addEventListener("click", closeViewModal);
+viewCloseBottomBtn?.addEventListener("click", closeViewModal);
+viewEditBtn?.addEventListener("click", () => {
+  if (viewingId) openEditModal(viewingId);
+});
+viewModal?.addEventListener("click", (e) => {
+  if (e.target === viewModal) closeViewModal();
 });
 
 editForm?.addEventListener("submit", saveEdit);
